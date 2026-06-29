@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.iso11820.ui.dialog.TestRecordDialogController"
+      stylesheets="@../css/styles.css"
+      styleClass="dialog-root" spacing="14"
+      prefWidth="460">
+    <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+
+    <Label text="试验记录" styleClass="dialog-title">
+        <font><Font name="Microsoft YaHei Bold" size="18"/></font>
+    </Label>
+
+    <!-- 自动计算摘要 -->
+    <Label text="试验数据摘要" styleClass="dialog-section-title">
+        <font><Font name="Microsoft YaHei Bold" size="13"/></font>
+    </Label>
+    <Label fx:id="summaryLabel" text="加载中..." wrapText="true"
+           styleClass="summary-text">
+        <font><Font name="Microsoft YaHei" size="11"/></font>
+    </Label>
+
+    <Separator/>
+
+    <!-- 火焰信息 -->
+    <Label text="试验现象" styleClass="dialog-section-title">
+        <font><Font name="Microsoft YaHei Bold" size="13"/></font>
+    </Label>
+    <CheckBox fx:id="flameCheckBox" text="是否出现持续火焰"
+              styleClass="dialog-checkbox">
+        <font><Font name="Microsoft YaHei" size="12"/></font>
+    </CheckBox>
+    <GridPane hgap="14" vgap="8">
+        <Label text="火焰发生时刻(秒):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="flameTimeField" promptText="0" prefWidth="100"
+                   disable="true" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="火焰持续时间(秒):" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="flameDurationField" promptText="0" prefWidth="100"
+                   disable="true" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+    </GridPane>
+
+    <Separator/>
+
+    <!-- 试验后数据 -->
+    <Label text="试验后数据" styleClass="dialog-section-title">
+        <font><Font name="Microsoft YaHei Bold" size="13"/></font>
+    </Label>
+    <GridPane hgap="14" vgap="8">
+        <Label text="试验后质量(g):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="postWeightField" promptText="必填" prefWidth="120"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="备注:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextArea fx:id="memoArea" promptText="可选" prefRowCount="2"
+                  prefWidth="300" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                  GridPane.columnSpan="3"/>
+    </GridPane>
+
+    <!-- 计算结果展示 -->
+    <Separator/>
+    <Label text="自动计算结果" styleClass="dialog-section-title">
+        <font><Font name="Microsoft YaHei Bold" size="13"/></font>
+    </Label>
+    <Label fx:id="calcLabel" text="计算中..." wrapText="true"
+           styleClass="summary-text">
+        <font><Font name="Microsoft YaHei" size="11"/></font>
+    </Label>
+
+    <!-- 按钮 -->
+    <Separator/>
+    <HBox spacing="16" alignment="CENTER_RIGHT">
+        <Button text="保存记录" prefWidth="100" prefHeight="34"
+                styleClass="primary-button"
+                onAction="#handleSave">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Button>
+        <Button text="取消" prefWidth="80" prefHeight="34"
+                styleClass="cancel-button"
+                onAction="#handleCancel">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Button>
+    </HBox>
+</VBox>

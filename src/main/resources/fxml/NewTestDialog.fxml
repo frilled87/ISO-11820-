@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.iso11820.ui.dialog.NewTestDialogController"
+      stylesheets="@../css/styles.css"
+      styleClass="dialog-root" spacing="16"
+      prefWidth="480">
+    <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+
+    <!-- 标题 -->
+    <Label text="新建试验" styleClass="dialog-title">
+        <font><Font name="Microsoft YaHei Bold" size="18"/></font>
+    </Label>
+    <Separator/>
+
+    <!-- 表单 -->
+    <GridPane hgap="14" vgap="10" styleClass="dialog-form">
+        <!-- row 0: 样品编号 + 样品名称 -->
+        <Label text="样品编号:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="productIdField" promptText="如 20240613-001"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="160"/>
+        <Label text="样品名称:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="productNameField" promptText="如 岩棉隔热板"
+                   GridPane.rowIndex="0" GridPane.columnIndex="3" prefWidth="140"/>
+
+        <!-- row 1: 规格 + 直径 -->
+        <Label text="规格型号:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="specificField" promptText="如 100×50×25mm"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="直径(mm):" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="diameterField" promptText="100.0"
+                   GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <!-- row 2: 高度 + 试验前质量 -->
+        <Label text="高度(mm):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="heightField" promptText="50.0"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="试验前质量(g):" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="preWeightField" promptText="50.0"
+                   GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <!-- row 3: 环境温度 + 环境湿度 -->
+        <Label text="环境温度(°C):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="ambTempField" promptText="25.0"
+                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="环境湿度(%):" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <TextField fx:id="ambHumiField" promptText="60.0"
+                   GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+    </GridPane>
+
+    <Separator/>
+
+    <!-- 时长模式 -->
+    <Label text="试验时长" styleClass="dialog-section-title">
+        <font><Font name="Microsoft YaHei Bold" size="13"/></font>
+    </Label>
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <RadioButton fx:id="radioStandard" text="标准 60 分钟" selected="true">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+            <toggleGroup>
+                <ToggleGroup fx:id="durationGroup"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="radioCustom" text="自定义(分钟):"
+                     toggleGroup="$durationGroup">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </RadioButton>
+        <TextField fx:id="customDurationField" promptText="60" prefWidth="60"
+                   disable="true"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- 设备信息（自动填充，只读） -->
+    <Label text="设备信息（自动读取）" styleClass="dialog-section-title">
+        <font><Font name="Microsoft YaHei Bold" size="13"/></font>
+    </Label>
+    <HBox spacing="24">
+        <Label fx:id="apparatusInfoLabel" text="设备编号: —  名称: —  检定至: —"
+               styleClass="apparatus-info-text">
+            <font><Font name="Microsoft YaHei" size="11"/></font>
+        </Label>
+    </HBox>
+
+    <Separator/>
+
+    <!-- 按钮 -->
+    <HBox spacing="16" alignment="CENTER_RIGHT">
+        <Button text="创建试验" prefWidth="100" prefHeight="34"
+                styleClass="primary-button"
+                onAction="#handleCreate">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Button>
+        <Button text="取消" prefWidth="80" prefHeight="34"
+                styleClass="cancel-button"
+                onAction="#handleCancel">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Button>
+    </HBox>
+</VBox>

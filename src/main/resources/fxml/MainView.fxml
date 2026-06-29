@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.iso11820.ui.MainController"
+            stylesheets="@../css/styles.css">
+
+    <!-- ============================================================
+         顶部：标题栏 + 操作员 + 状态显示
+         ============================================================ -->
+    <top>
+        <HBox fx:id="topBar" alignment="CENTER_LEFT" spacing="20"
+              styleClass="top-bar">
+            <padding>
+                <Insets top="10" right="16" bottom="10" left="16"/>
+            </padding>
+
+            <!-- 标题 -->
+            <Label text="ISO 11820 建材不燃性试验仿真系统"
+                   styleClass="top-title">
+                <font>
+                    <Font name="Microsoft YaHei" size="16"/>
+                </font>
+            </Label>
+
+            <!-- 弹簧，推到右侧 -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- 操作员 -->
+            <Label styleClass="top-info-label">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Label>
+            <Label fx:id="operatorLabel" text="—"
+                   styleClass="top-info-value">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Label>
+
+            <Separator orientation="VERTICAL" prefHeight="20"/>
+
+            <!-- 当前状态 -->
+            <Label styleClass="top-info-label">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Label>
+            <Label fx:id="statusLabel" text="空闲"
+                   styleClass="status-badge">
+                <font>
+                    <Font name="Microsoft YaHei Bold" size="13"/>
+                </font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- ============================================================
+         左侧：5 通道温度 LED 面板
+         ============================================================ -->
+    <left>
+        <VBox fx:id="tempPanel" spacing="12" styleClass="temp-panel"
+              fillWidth="true">
+            <padding>
+                <Insets top="12" right="14" bottom="12" left="14"/>
+            </padding>
+
+            <!-- 面板标题 -->
+            <Label text="实时温度" styleClass="temp-panel-title">
+                <font>
+                    <Font name="Microsoft YaHei Bold" size="13"/>
+                </font>
+            </Label>
+
+            <!-- 炉温1 -->
+            <VBox styleClass="temp-card">
+                <Label text="炉温 1 (TF1)" styleClass="temp-channel-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="11"/>
+                    </font>
+                </Label>
+                <Label fx:id="tf1Value" text="— °C"
+                       styleClass="temp-value-led">
+                    <font>
+                        <Font name="Consolas" size="28"/>
+                    </font>
+                </Label>
+            </VBox>
+
+            <!-- 炉温2 -->
+            <VBox styleClass="temp-card">
+                <Label text="炉温 2 (TF2)" styleClass="temp-channel-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="11"/>
+                    </font>
+                </Label>
+                <Label fx:id="tf2Value" text="— °C"
+                       styleClass="temp-value-led">
+                    <font>
+                        <Font name="Consolas" size="28"/>
+                    </font>
+                </Label>
+            </VBox>
+
+            <!-- 表面温 -->
+            <VBox styleClass="temp-card">
+                <Label text="表面温度 (TS)" styleClass="temp-channel-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="11"/>
+                    </font>
+                </Label>
+                <Label fx:id="tsValue" text="— °C"
+                       styleClass="temp-value-led">
+                    <font>
+                        <Font name="Consolas" size="28"/>
+                    </font>
+                </Label>
+            </VBox>
+
+            <!-- 中心温 -->
+            <VBox styleClass="temp-card">
+                <Label text="中心温度 (TC)" styleClass="temp-channel-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="11"/>
+                    </font>
+                </Label>
+                <Label fx:id="tcValue" text="— °C"
+                       styleClass="temp-value-led">
+                    <font>
+                        <Font name="Consolas" size="28"/>
+                    </font>
+                </Label>
+            </VBox>
+
+            <!-- 校准温 -->
+            <VBox styleClass="temp-card">
+                <Label text="校准温度 (TCal)" styleClass="temp-channel-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="11"/>
+                    </font>
+                </Label>
+                <Label fx:id="tCalValue" text="— °C"
+                       styleClass="temp-value-led">
+                    <font>
+                        <Font name="Consolas" size="28"/>
+                    </font>
+                </Label>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- ============================================================
+         中部：Tab 页
+         ============================================================ -->
+    <center>
+        <TabPane fx:id="tabPane" styleClass="main-tab-pane"
+                 tabClosingPolicy="UNAVAILABLE">
+            <!-- Tab 1: 试验控制 -->
+            <Tab text="试验控制" styleClass="main-tab">
+                <VBox styleClass="control-tab-content">
+                    <!-- 曲线图容器（SwingNode 运行时注入） -->
+                    <StackPane fx:id="chartContainer"
+                               VBox.vgrow="ALWAYS"
+                               styleClass="chart-container"/>
+
+                    <!-- 图例摘要栏 -->
+                    <HBox fx:id="chartLegend" alignment="CENTER"
+                          spacing="24" styleClass="chart-legend">
+                        <Label fx:id="legendTf1" text="炉温1 —" styleClass="legend-tf1">
+                            <font><Font name="Microsoft YaHei" size="11"/></font>
+                        </Label>
+                        <Label fx:id="legendTf2" text="炉温2 —" styleClass="legend-tf2">
+                            <font><Font name="Microsoft YaHei" size="11"/></font>
+                        </Label>
+                        <Label fx:id="legendTs" text="表面温 —" styleClass="legend-ts">
+                            <font><Font name="Microsoft YaHei" size="11"/></font>
+                        </Label>
+                        <Label fx:id="legendTc" text="中心温 —" styleClass="legend-tc">
+                            <font><Font name="Microsoft YaHei" size="11"/></font>
+                        </Label>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <!-- Tab 2: 记录查询 -->
+            <Tab text="记录查询" styleClass="main-tab">
+                <VBox spacing="8" styleClass="query-tab-content">
+                    <padding><Insets top="12" right="16" bottom="12" left="16"/></padding>
+
+                    <!-- 搜索栏 -->
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <Label text="开始日期:">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Label>
+                        <TextField fx:id="queryStartDate" promptText="2026-01-01"
+                                   prefWidth="110"/>
+                        <Label text="结束日期:">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Label>
+                        <TextField fx:id="queryEndDate" promptText="2026-12-31"
+                                   prefWidth="110"/>
+                        <Label text="样品编号:">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Label>
+                        <TextField fx:id="queryProductId" promptText="模糊匹配"
+                                   prefWidth="110"/>
+                        <Label text="操作员:">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Label>
+                        <TextField fx:id="queryOperator" promptText="全部"
+                                   prefWidth="80"/>
+                        <Button text="查询" prefWidth="64" prefHeight="30"
+                                styleClass="primary-button"
+                                onAction="#handleQuery">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Button>
+                    </HBox>
+
+                    <!-- 结果表格 -->
+                    <javafx.scene.control.TableView fx:id="queryTable"
+                                                     VBox.vgrow="ALWAYS"
+                                                     styleClass="query-table">
+                        <columns>
+                            <javafx.scene.control.TableColumn text="试验ID" prefWidth="150"/>
+                            <javafx.scene.control.TableColumn text="样品编号" prefWidth="120"/>
+                            <javafx.scene.control.TableColumn text="试验日期" prefWidth="100"/>
+                            <javafx.scene.control.TableColumn text="操作员" prefWidth="80"/>
+                            <javafx.scene.control.TableColumn text="时长(秒)" prefWidth="70"/>
+                            <javafx.scene.control.TableColumn text="综合温升°C" prefWidth="90"/>
+                            <javafx.scene.control.TableColumn text="失重率%" prefWidth="70"/>
+                            <javafx.scene.control.TableColumn text="已完成" prefWidth="60"/>
+                        </columns>
+                    </javafx.scene.control.TableView>
+
+                    <!-- 底部按钮 -->
+                    <HBox spacing="12" alignment="CENTER_RIGHT">
+                        <Button text="导出 Excel" prefWidth="100" prefHeight="30"
+                                styleClass="normal-button"
+                                onAction="#handleExportExcel">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <!-- Tab 3: 设备校准 -->
+            <Tab text="设备校准" styleClass="main-tab">
+                <VBox spacing="10" styleClass="query-tab-content">
+                    <padding><Insets top="12" right="16" bottom="12" left="16"/></padding>
+
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <Label text="当前校准温度:" styleClass="calib-section-title">
+                            <font><Font name="Microsoft YaHei Bold" size="13"/></font>
+                        </Label>
+                        <Label fx:id="calibTempLabel" text="— °C"
+                               styleClass="temp-value-led">
+                            <font><Font name="Consolas" size="24"/></font>
+                        </Label>
+                    </HBox>
+
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <Button text="新建校准" prefWidth="100" prefHeight="30"
+                                styleClass="primary-button"
+                                onAction="#handleNewCalibration">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Button>
+                        <Button text="刷新列表" prefWidth="80" prefHeight="30"
+                                styleClass="normal-button"
+                                onAction="#handleRefreshCalibration">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Button>
+                    </HBox>
+
+                    <!-- 校准记录表 -->
+                    <javafx.scene.control.TableView fx:id="calibTable"
+                                                     VBox.vgrow="ALWAYS"
+                                                     styleClass="query-table">
+                        <columns>
+                            <javafx.scene.control.TableColumn text="校准时间" prefWidth="160"/>
+                            <javafx.scene.control.TableColumn text="类型" prefWidth="80"/>
+                            <javafx.scene.control.TableColumn text="操作员" prefWidth="80"/>
+                            <javafx.scene.control.TableColumn text="平均温度°C" prefWidth="100"/>
+                            <javafx.scene.control.TableColumn text="最大偏差°C" prefWidth="90"/>
+                            <javafx.scene.control.TableColumn text="是否通过" prefWidth="70"/>
+                        </columns>
+                    </javafx.scene.control.TableView>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+
+    <!-- ============================================================
+         右侧：控制按钮区
+         ============================================================ -->
+    <right>
+        <VBox fx:id="buttonPanel" spacing="10" styleClass="button-panel"
+              fillWidth="true">
+            <padding>
+                <Insets top="12" right="14" bottom="12" left="14"/>
+            </padding>
+
+            <Label text="试验控制" styleClass="button-panel-title">
+                <font>
+                    <Font name="Microsoft YaHei Bold" size="13"/>
+                </font>
+            </Label>
+
+            <Button fx:id="btnNewTest" text="新建试验"
+                    prefWidth="140" prefHeight="38"
+                    styleClass="control-button,primary-button"
+                    onAction="#handleNewTest">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Button>
+
+            <Button fx:id="btnStartHeating" text="开始升温"
+                    prefWidth="140" prefHeight="38"
+                    styleClass="control-button,success-button"
+                    onAction="#handleStartHeating">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Button>
+
+            <Button fx:id="btnStopHeating" text="停止升温"
+                    prefWidth="140" prefHeight="38"
+                    styleClass="control-button,danger-button"
+                    onAction="#handleStopHeating" disable="true">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Button>
+
+            <Separator prefWidth="140"/>
+
+            <Button fx:id="btnStartRecording" text="开始记录"
+                    prefWidth="140" prefHeight="38"
+                    styleClass="control-button,success-button"
+                    onAction="#handleStartRecording" disable="true">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Button>
+
+            <Button fx:id="btnStopRecording" text="停止记录"
+                    prefWidth="140" prefHeight="38"
+                    styleClass="control-button,danger-button"
+                    onAction="#handleStopRecording" disable="true">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Button>
+
+            <Separator prefWidth="140"/>
+
+            <Button fx:id="btnSettings" text="参数设置"
+                    prefWidth="140" prefHeight="38"
+                    styleClass="control-button,normal-button"
+                    onAction="#handleSettings">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Button>
+
+            <Button fx:id="btnTestRecord" text="试验记录"
+                    prefWidth="140" prefHeight="38"
+                    styleClass="control-button,normal-button"
+                    onAction="#handleTestRecord" disable="true">
+                <font>
+                    <Font name="Microsoft YaHei" size="12"/>
+                </font>
+            </Button>
+        </VBox>
+    </right>
+
+    <!-- ============================================================
+         底部：系统消息日志 + 状态栏
+         ============================================================ -->
+    <bottom>
+        <VBox>
+            <!-- 消息日志区域 -->
+            <VBox fx:id="logPanel" styleClass="log-panel">
+                <HBox alignment="CENTER_LEFT" styleClass="log-header">
+                    <Label text="系统消息" styleClass="log-title">
+                        <font>
+                            <Font name="Microsoft YaHei Bold" size="12"/>
+                        </font>
+                    </Label>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="btnClearLog" text="清空"
+                            styleClass="log-clear-button"
+                            onAction="#handleClearLog">
+                        <font>
+                            <Font name="Microsoft YaHei" size="11"/>
+                        </font>
+                    </Button>
+                </HBox>
+                <ScrollPane fitToWidth="true"
+                            styleClass="log-scroll-pane"
+                            VBox.vgrow="ALWAYS">
+                    <TextArea fx:id="logTextArea" editable="false"
+                              wrapText="true"
+                              styleClass="log-text-area">
+                        <font>
+                            <Font name="Microsoft YaHei" size="12"/>
+                        </font>
+                    </TextArea>
+                </ScrollPane>
+            </VBox>
+
+            <!-- 底部状态栏 -->
+            <HBox fx:id="statusBar" alignment="CENTER_LEFT" spacing="24"
+                  styleClass="status-bar">
+                <padding>
+                    <Insets top="4" right="16" bottom="4" left="16"/>
+                </padding>
+
+                <Label styleClass="status-bar-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="12"/>
+                    </font>
+                </Label>
+                <Label fx:id="productIdLabel" text="—"
+                       styleClass="status-bar-value">
+                    <font>
+                        <Font name="Microsoft YaHei" size="12"/>
+                    </font>
+                </Label>
+
+                <Separator orientation="VERTICAL" prefHeight="16"/>
+
+                <Label styleClass="status-bar-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="12"/>
+                    </font>
+                </Label>
+                <Label fx:id="durationLabel" text="0 秒"
+                       styleClass="status-bar-value">
+                    <font>
+                        <Font name="Microsoft YaHei" size="12"/>
+                    </font>
+                </Label>
+
+                <Separator orientation="VERTICAL" prefHeight="16"/>
+
+                <Label styleClass="status-bar-label">
+                    <font>
+                        <Font name="Microsoft YaHei" size="12"/>
+                    </font>
+                </Label>
+                <Label fx:id="driftLabel" text="— °C/10min"
+                       styleClass="status-bar-value">
+                    <font>
+                        <Font name="Microsoft YaHei" size="12"/>
+                    </font>
+                </Label>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label text="ISO 11820:2022" styleClass="status-bar-right">
+                    <font>
+                        <Font name="Microsoft YaHei" size="11"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

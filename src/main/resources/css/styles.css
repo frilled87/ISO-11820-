@@ -1,0 +1,497 @@
+/* ============================================================
+ * ISO 11820 建材不燃性试验仿真系统 — 全局样式
+ * ============================================================ */
+
+/* ---------- 根 / 全局 ---------- */
+.root {
+    -fx-background-color: #f0f2f5;
+    -fx-font-family: "Microsoft YaHei", "SimHei", sans-serif;
+}
+
+/* ============================================================
+   登录界面样式
+   ============================================================ */
+
+.login-panel {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 16, 0, 0, 4);
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.login-title {
+    -fx-text-fill: #1a1a2e;
+    -fx-font-weight: bold;
+}
+
+.login-subtitle {
+    -fx-text-fill: #666666;
+}
+
+.field-label {
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 2 0;
+}
+
+.role-toggle-box {
+    -fx-padding: 4 0 4 0;
+}
+
+.role-radio {
+    -fx-text-fill: #444444;
+}
+
+.role-radio .radio {
+    -fx-background-color: transparent;
+    -fx-border-color: #b0b0b0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1.5;
+    -fx-padding: 3;
+}
+
+.role-radio:selected .radio {
+    -fx-border-color: #1976d2;
+}
+
+.role-radio .dot {
+    -fx-background-color: #1976d2;
+    -fx-background-radius: 8;
+    -fx-padding: 4;
+}
+
+.password-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 4;
+    -fx-border-color: #c0c0c0;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+}
+
+.password-field:focused {
+    -fx-border-color: #1976d2;
+    -fx-border-width: 1.5;
+}
+
+.login-button {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #1565c0;
+}
+
+.login-button:pressed {
+    -fx-background-color: #0d47a1;
+}
+
+.cancel-button {
+    -fx-background-color: #eeeeee;
+    -fx-text-fill: #555555;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.cancel-button:pressed {
+    -fx-background-color: #bdbdbd;
+}
+
+/* ============================================================
+   主界面 — 顶部栏
+   ============================================================ */
+
+.top-bar {
+    -fx-background-color: #1a1a2e;
+    -fx-padding: 10 16 10 16;
+}
+
+.top-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.top-info-label {
+    -fx-text-fill: #a0a0b8;
+}
+
+.top-info-value {
+    -fx-text-fill: #ffffff;
+}
+
+/* 状态徽章 */
+.status-badge {
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 3;
+    -fx-padding: 3 10 3 10;
+}
+
+.status-idle {
+    -fx-background-color: #757575;
+    -fx-text-fill: #ffffff;
+}
+
+.status-preparing {
+    -fx-background-color: #f57c00;
+    -fx-text-fill: #ffffff;
+}
+
+.status-ready {
+    -fx-background-color: #388e3c;
+    -fx-text-fill: #ffffff;
+}
+
+.status-recording {
+    -fx-background-color: #d32f2f;
+    -fx-text-fill: #ffffff;
+}
+
+.status-complete {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: #ffffff;
+}
+
+/* ============================================================
+   主界面 — 左侧温度面板
+   ============================================================ */
+
+.temp-panel {
+    -fx-background-color: #1e1e2d;
+    -fx-min-width: 170;
+    -fx-pref-width: 170;
+}
+
+.temp-panel-title {
+    -fx-text-fill: #808090;
+    -fx-alignment: center;
+    -fx-padding: 0 0 4 0;
+}
+
+.temp-card {
+    -fx-background-color: #252538;
+    -fx-background-radius: 6;
+    -fx-padding: 8 10 8 10;
+    -fx-alignment: center;
+}
+
+.temp-channel-label {
+    -fx-text-fill: #808090;
+    -fx-alignment: center;
+}
+
+.temp-value-led {
+    -fx-text-fill: #00e676;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* ============================================================
+   主界面 — 中部 Tab 页
+   ============================================================ */
+
+.main-tab-pane {
+    -fx-background-color: #ffffff;
+}
+
+.main-tab-pane .tab-header-area {
+    -fx-background-color: #e8eaf0;
+}
+
+.main-tab {
+    -fx-font-family: "Microsoft YaHei";
+    -fx-font-size: 13px;
+}
+
+.main-tab .tab-label {
+    -fx-text-fill: #555555;
+}
+
+.main-tab:selected .tab-label {
+    -fx-text-fill: #1976d2;
+    -fx-font-weight: bold;
+}
+
+.tab-placeholder {
+    -fx-background-color: #ffffff;
+    -fx-padding: 40;
+}
+
+.tab-placeholder-text {
+    -fx-text-fill: #aaaaaa;
+}
+
+/* ============================================================
+   主界面 — 右侧按钮面板
+   ============================================================ */
+
+.button-panel {
+    -fx-background-color: #ffffff;
+    -fx-min-width: 168;
+    -fx-pref-width: 168;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 0 1;
+}
+
+.button-panel-title {
+    -fx-text-fill: #666666;
+    -fx-alignment: center;
+    -fx-padding: 0 0 2 0;
+}
+
+.control-button {
+    -fx-background-radius: 4;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: #ffffff;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1565c0;
+}
+
+.primary-button:disabled {
+    -fx-background-color: #bbdefb;
+    -fx-opacity: 1.0;
+}
+
+.success-button {
+    -fx-background-color: #43a047;
+    -fx-text-fill: #ffffff;
+}
+
+.success-button:hover {
+    -fx-background-color: #388e3c;
+}
+
+.success-button:disabled {
+    -fx-background-color: #c8e6c9;
+    -fx-opacity: 1.0;
+}
+
+.danger-button {
+    -fx-background-color: #e53935;
+    -fx-text-fill: #ffffff;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c62828;
+}
+
+.danger-button:disabled {
+    -fx-background-color: #ffcdd2;
+    -fx-opacity: 1.0;
+}
+
+.normal-button {
+    -fx-background-color: #757575;
+    -fx-text-fill: #ffffff;
+}
+
+.normal-button:hover {
+    -fx-background-color: #616161;
+}
+
+.normal-button:disabled {
+    -fx-background-color: #e0e0e0;
+    -fx-opacity: 1.0;
+}
+
+/* ============================================================
+   主界面 — 底部消息日志
+   ============================================================ */
+
+.log-panel {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1 0 0 0;
+    -fx-pref-height: 140;
+}
+
+.log-header {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 4 12 4 12;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.log-title {
+    -fx-text-fill: #444444;
+}
+
+.log-clear-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #888888;
+    -fx-cursor: hand;
+    -fx-padding: 2 8 2 8;
+}
+
+.log-clear-button:hover {
+    -fx-text-fill: #d32f2f;
+}
+
+.log-scroll-pane {
+    -fx-background-color: #ffffff;
+}
+
+.log-text-area {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #e0e0e0;
+    -fx-border-width: 0;
+}
+
+.log-text-area .content {
+    -fx-background-color: #1e1e1e;
+}
+
+.log-text-area .scroll-bar:vertical {
+    -fx-background-color: #1e1e1e;
+}
+
+/* ============================================================
+   主界面 — 底部状态栏
+   ============================================================ */
+
+.status-bar {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-bar-label {
+    -fx-text-fill: #888888;
+}
+
+.status-bar-value {
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+.status-bar-right {
+    -fx-text-fill: #aaaaaa;
+}
+
+/* ============================================================
+   主界面 — 试验控制 Tab（曲线图）
+   ============================================================ */
+
+.control-tab-content {
+    -fx-background-color: #ffffff;
+}
+
+.chart-container {
+    -fx-background-color: #ffffff;
+    -fx-padding: 8;
+}
+
+.chart-legend {
+    -fx-background-color: #f8f8f8;
+    -fx-padding: 6 16 6 16;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1 0 0 0;
+}
+
+.legend-tf1 {
+    -fx-text-fill: #e53935;
+    -fx-font-weight: bold;
+}
+
+.legend-tf2 {
+    -fx-text-fill: #fb8c00;
+    -fx-font-weight: bold;
+}
+
+.legend-ts {
+    -fx-text-fill: #1e88e5;
+    -fx-font-weight: bold;
+}
+
+.legend-tc {
+    -fx-text-fill: #43a047;
+    -fx-font-weight: bold;
+}
+
+/* ============================================================
+   对话框通用样式
+   ============================================================ */
+.dialog-root {
+    -fx-background-color: #ffffff;
+}
+
+.dialog-title {
+    -fx-text-fill: #1a1a2e;
+}
+
+.dialog-section-title {
+    -fx-text-fill: #555555;
+}
+
+.dialog-form {
+    -fx-padding: 4 0 4 0;
+}
+
+.dialog-form .label {
+    -fx-text-fill: #555555;
+}
+
+.dialog-form .text-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 3;
+    -fx-border-color: #c0c0c0;
+    -fx-border-radius: 3;
+    -fx-padding: 4 8 4 8;
+}
+
+.dialog-checkbox {
+    -fx-text-fill: #444444;
+}
+
+.summary-text {
+    -fx-text-fill: #666666;
+    -fx-background-color: #f8f8f8;
+    -fx-background-radius: 4;
+    -fx-padding: 8;
+}
+
+.apparatus-info-text {
+    -fx-text-fill: #888888;
+}
+
+/* ============================================================
+   记录查询 + 设备校准 Tab
+   ============================================================ */
+.query-tab-content {
+    -fx-background-color: #ffffff;
+}
+
+.query-table {
+    -fx-background-color: #ffffff;
+}
+
+.query-table .column-header {
+    -fx-background-color: #e8eaf0;
+}
+
+.calib-section-title {
+    -fx-text-fill: #444444;
+}
+
+/* ============================================================
+   主窗口占位（旧，保留兼容）
+   ============================================================ */
+.main-placeholder {
+    -fx-text-fill: #999999;
+}
