@@ -62,11 +62,11 @@
 
 | 文件 | 包路径 | 行数 | 说明 |
 |------|--------|------|------|
-| `AppConfig.java` | `com.project.utils` | ~200 | 配置管理单例，线程安全 DCL |
-| `LogUtil.java` | `com.project.utils` | ~180 | 日志门面，封装 SLF4J/Logback |
-| `DateUtil.java` | `com.project.utils` | ~280 | 日期格式化、时间戳、时差计算 |
-| `NumUtil.java` | `com.project.utils` | ~260 | 精度控制、空值转换、数字校验 |
-| `JsonUtil.java` | `com.project.utils` | ~280 | JSON 序列化/反序列化、文件读写 |
+| `AppConfig.java` | `com.iso11820.utils` | ~200 | 配置管理单例，线程安全 DCL |
+| `LogUtil.java` | `com.iso11820.utils` | ~180 | 日志门面，封装 SLF4J/Logback |
+| `DateUtil.java` | `com.iso11820.utils` | ~280 | 日期格式化、时间戳、时差计算 |
+| `NumUtil.java` | `com.iso11820.utils` | ~260 | 精度控制、空值转换、数字校验 |
+| `JsonUtil.java` | `com.iso11820.utils` | ~280 | JSON 序列化/反序列化、文件读写 |
 | `appsettings.json` | `resources` | ~55 | 完整配置文件 |
 | `logback.xml` | `resources` | ~110 | 日志配置（控制台彩色+滚动文件） |
 
@@ -74,24 +74,24 @@
 
 | 文件 | 包路径 | 行数 | 说明 |
 |------|--------|------|------|
-| `FilePathManageUtil.java` | `com.project.utils` | ~480 | 路径管理、目录创建、批量清理 |
-| `DataPoint.java` | `com.project.service.entity` | ~180 | 时序温度数据点实体 |
-| `CsvDataService.java` | `com.project.service` | ~300 | CSV 读写服务（追加/批量/读取/删除） |
+| `FilePathManageUtil.java` | `com.iso11820.utils` | ~480 | 路径管理、目录创建、批量清理 |
+| `DataPoint.java` | `com.iso11820.service.entity` | ~180 | 时序温度数据点实体 |
+| `CsvDataService.java` | `com.iso11820.service` | ~300 | CSV 读写服务（追加/批量/读取/删除） |
 
 ### 第 3 轮：Excel/PDF 导出
 
 | 文件 | 包路径 | 行数 | 说明 |
 |------|--------|------|------|
-| `ExportTestInfo.java` | `com.project.service.model` | ~280 | 试验报告数据实体 |
-| `ExcelReportService.java` | `com.project.service` | ~370 | Excel 3 Sheet 报告导出 |
-| `PdfReportService.java` | `com.project.service` | ~420 | PDF A4 中文报告导出 |
+| `ExportTestInfo.java` | `com.iso11820.service.model` | ~280 | 试验报告数据实体 |
+| `ExcelReportService.java` | `com.iso11820.service` | ~370 | Excel 3 Sheet 报告导出 |
+| `PdfReportService.java` | `com.iso11820.service` | ~420 | PDF A4 中文报告导出 |
 
 ### 第 4 轮：整合与文档
 
 | 文件 | 包路径 | 行数 | 说明 |
 |------|--------|------|------|
-| `ReportExportService.java` | `com.project.service` | ~200 | ⭐ 统一导出门面 |
-| `Round4FullIntegrationExample.java` | `com.project.service` | ~250 | 全链路集成演示 |
+| `ReportExportService.java` | `com.iso11820.service` | ~200 | ⭐ 统一导出门面 |
+| `Round4FullIntegrationExample.java` | `com.iso11820.service` | ~250 | 全链路集成演示 |
 | `README.md` | 项目根目录 | — | 本文档 |
 
 ### 示例文件
@@ -331,8 +331,8 @@ AppConfig, LogUtil, DateUtil, NumUtil, JsonUtil
 | ❌ 修改 `com.iso11820.dao.*` | 数据持久层（其他组员负责） |
 | ❌ 修改 `com.iso11820.ui.*` | UI 界面层（其他组员负责） |
 | ❌ 修改 `com.iso11820.entity.*` | 数据库实体（其他组员负责） |
-| ✅ 修改 `com.project.utils.*` | 本模块 — 工具层 |
-| ✅ 修改 `com.project.service.*` | 本模块 — 服务层 |
+| ✅ 修改 `com.iso11820.utils.*` | 本模块 — 工具层 |
+| ✅ 修改 `com.iso11820.service.*` | 本模块 — 服务层 |
 | ✅ 修改 `pom.xml` | 仅添加依赖，不修改 compile 配置 |
 | ✅ 修改 `appsettings.json` | 仅新增配置项，不删除已有项 |
 | ✅ 修改 `logback.xml` | 仅新增 logger，不修改根配置 |
@@ -357,23 +357,23 @@ boolean ok = ReportExportService.getInstance().exportReport(info);
 
 ```bash
 # 运行全流程集成测试
-mvn compile exec:java -Dexec.mainClass="com.project.service.Round4FullIntegrationExample"
+mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round4FullIntegrationExample"
 ```
 
 ### 8.3 各轮示例入口
 
 ```bash
 # 第 1 轮: 配置 + 日志 + 日期 + 数值 + JSON
-mvn compile exec:java -Dexec.mainClass="com.project.utils.Round1UsageExample"
+mvn compile exec:java -Dexec.mainClass="com.iso11820.utils.Round1UsageExample"
 
 # 第 2 轮: CSV 读写 + 文件路径管理
-mvn compile exec:java -Dexec.mainClass="com.project.service.Round2UsageExample"
+mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round2UsageExample"
 
 # 第 3 轮: Excel + PDF 导出
-mvn compile exec:java -Dexec.mainClass="com.project.service.Round3UsageExample"
+mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round3UsageExample"
 
 # 第 4 轮: 全流程集成
-mvn compile exec:java -Dexec.mainClass="com.project.service.Round4FullIntegrationExample"
+mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round4FullIntegrationExample"
 ```
 
 ---

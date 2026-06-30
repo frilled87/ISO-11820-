@@ -1,6 +1,6 @@
-package com.project.service.model;
+package com.iso11820.service.model;
 
-import com.project.utils.NumUtil;
+import com.iso11820.utils.NumUtil;
 
 import java.util.Objects;
 

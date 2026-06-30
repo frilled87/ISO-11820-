@@ -1,4 +1,4 @@
-package com.project.service;
+package com.iso11820.service;
 
 import com.itextpdf.io.font.FontProgram;
 import com.itextpdf.io.font.FontProgramFactory;
@@ -18,8 +18,8 @@ import com.itextpdf.layout.properties.HorizontalAlignment;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.layout.properties.VerticalAlignment;
-import com.project.service.model.ExportTestInfo;
-import com.project.utils.*;
+import com.iso11820.service.model.ExportTestInfo;
+import com.iso11820.utils.*;
 import org.slf4j.Logger;
 
 import java.io.IOException;

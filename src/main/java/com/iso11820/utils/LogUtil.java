@@ -1,4 +1,4 @@
-package com.project.utils;
+package com.iso11820.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public final class LogUtil {
 
     /** 默认 logger 名称 */
-    private static final String DEFAULT_NAME = "com.project";
+    private static final String DEFAULT_NAME = "com.iso11820";
 
     /** 默认 logger */
     private static final Logger DEFAULT_LOGGER = LoggerFactory.getLogger(DEFAULT_NAME);

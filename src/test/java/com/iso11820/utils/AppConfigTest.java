@@ -1,4 +1,4 @@
-package com.project.utils;
+package com.iso11820.utils;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;

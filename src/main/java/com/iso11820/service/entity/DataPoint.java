@@ -1,7 +1,7 @@
-package com.project.service.entity;
+package com.iso11820.service.entity;
 
-import com.project.utils.DateUtil;
-import com.project.utils.NumUtil;
+import com.iso11820.utils.DateUtil;
+import com.iso11820.utils.NumUtil;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
