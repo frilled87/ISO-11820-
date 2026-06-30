@@ -3,10 +3,15 @@ package com.iso11820.service;
 import com.iso11820.service.entity.DataPoint;
 import com.iso11820.service.model.ExportTestInfo;
 import com.iso11820.utils.*;
-import org.apache.poi.common.usermodel.fonts.FontCharset;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.charts.*;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xddf.usermodel.XDDFDataSourcesFactory;
+import org.apache.poi.xddf.usermodel.XDDFDataSource;
+import org.apache.poi.xddf.usermodel.XDDFNumericalDataSource;
+import org.apache.poi.xddf.usermodel.chart.MarkerStyle;
+import org.apache.poi.xddf.usermodel.chart.XDDFChartAxis;
+import org.apache.poi.xddf.usermodel.chart.XDDFLineChartData;
 import org.apache.poi.xssf.usermodel.*;
 import org.slf4j.Logger;
 
