@@ -4,14 +4,20 @@ import com.iso11820.service.entity.DataPoint;
 import com.iso11820.service.model.ExportTestInfo;
 import com.iso11820.utils.*;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.usermodel.charts.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xddf.usermodel.XDDFDataSourcesFactory;
 import org.apache.poi.xddf.usermodel.XDDFDataSource;
 import org.apache.poi.xddf.usermodel.XDDFNumericalDataSource;
+import org.apache.poi.xddf.usermodel.chart.AxisCrosses;
+import org.apache.poi.xddf.usermodel.chart.AxisPosition;
+import org.apache.poi.xddf.usermodel.chart.ChartTypes;
 import org.apache.poi.xddf.usermodel.chart.MarkerStyle;
+import org.apache.poi.xddf.usermodel.chart.XDDFChart;
 import org.apache.poi.xddf.usermodel.chart.XDDFChartAxis;
+import org.apache.poi.xddf.usermodel.chart.XDDFChartData;
+import org.apache.poi.xddf.usermodel.chart.XDDFCategoryDataSource;
 import org.apache.poi.xddf.usermodel.chart.XDDFLineChartData;
+import org.apache.poi.xddf.usermodel.chart.XDDFSeries;
 import org.apache.poi.xssf.usermodel.*;
 import org.slf4j.Logger;
 
@@ -215,7 +221,7 @@ public final class ExcelReportService {
         row = addInfoRow(sheet, row, "表面温升", ExportTestInfo.formatTemp(info.getDeltaTs()), styles);
         row = addInfoRow(sheet, row, "中心温升", ExportTestInfo.formatTemp(info.getDeltaTc()), styles);
         row++;
-        row = addInfoRow(sheet, row, "总试验时长", info.getTotalTestTime() == 0 ? "--" : DateUtil.readableDuration(info.getTotalTestTime()), styles);
+        row = addInfoRow(sheet, row, "总试验时长", info.getTotalTestTime() == 0 ? "--" : com.iso11820.utils.DateUtil.readableDuration(info.getTotalTestTime()), styles);
         row = addInfoRow(sheet, row, "恒功率值", info.getConstPower() == 0 ? "--" : String.valueOf(info.getConstPower()), styles);
         row = addInfoRow(sheet, row, "火焰持续时间", info.getFlameTime() == 0 ? "无火焰" : info.getFlameDuration() + " 秒", styles);
         row++;
@@ -354,10 +360,10 @@ public final class ExcelReportService {
 
         XDDFLineChartData lineData = (XDDFLineChartData) chart.createData(ChartTypes.LINE, bottomAxis, leftAxis);
 
-        addSeries(lineData, timeAxis, tf1Data, "炉温1", new byte[]{(byte) 220, 50, 50});    // 红色
-        addSeries(lineData, timeAxis, tf2Data, "炉温2", new byte[]{(byte) 50, 100, 220});   // 蓝色
-        addSeries(lineData, timeAxis, tsData, "表面温", new byte[]{(byte) 50, 160, 50});    // 绿色
-        addSeries(lineData, timeAxis, tcData, "中心温", new byte[]{(byte) 200, 150, 0});    // 橙色
+        addSeries(lineData, timeAxis, tf1Data, "炉温1", new byte[]{(byte) (220 & 0xFF), (byte) (50 & 0xFF), (byte) (50 & 0xFF)});    // 红色
+        addSeries(lineData, timeAxis, tf2Data, "炉温2", new byte[]{(byte) (50 & 0xFF), (byte) (100 & 0xFF), (byte) (220 & 0xFF)});   // 蓝色
+        addSeries(lineData, timeAxis, tsData, "表面温", new byte[]{(byte) (50 & 0xFF), (byte) (160 & 0xFF), (byte) (50 & 0xFF)});    // 绿色
+        addSeries(lineData, timeAxis, tcData, "中心温", new byte[]{(byte) (200 & 0xFF), (byte) (150 & 0xFF), (byte) (0)});           // 橙色
 
         chart.plot(lineData);
 
@@ -375,7 +381,6 @@ public final class ExcelReportService {
         XDDFLineChartData.Series series = (XDDFLineChartData.Series) lineData.addSeries(timeAxis, valueData);
         series.setTitle(name, null);
         series.setSmooth(false);
-        // 设置线条颜色
         series.setMarkerStyle(MarkerStyle.NONE);
         // 注：POI 5.x 中 Series 线条颜色设置方式有限，通过预设颜色实现
     }
