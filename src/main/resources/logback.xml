@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ISO 11820 仿真系统 — 日志配置
+    ================================
+    输出目标：
+      1. 控制台（INFO 级别，彩色）
+      2. 滚动文件（DEBUG 级别，按日期+大小滚动，保留 30 天）
+
+    日志文件路径：./logs/iso11820.log
+    单文件上限：10 MB
+    归档格式：iso11820-yyyy-MM-dd.N.log.gz
+-->
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <!-- ============================================================ -->
+    <!--  属性定义                                                      -->
+    <!-- ============================================================ -->
+    <property name="LOG_DIR" value="./logs" />
+    <property name="LOG_FILE" value="iso11820" />
+    <property name="MAX_FILE_SIZE" value="10MB" />
+    <property name="MAX_HISTORY" value="30" />
+
+    <!-- ============================================================ -->
+    <!--  控制台输出 — 彩色编码                                          -->
+    <!-- ============================================================ -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) [%thread] %cyan(%logger{36}) - %msg%n
+            </pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+    <!-- ============================================================ -->
+    <!--  滚动文件输出 — DEBUG 级别，按大小+日期归档                      -->
+    <!-- ============================================================ -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/${LOG_FILE}.log</file>
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n
+            </pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <!-- 滚动策略：按大小+日期 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 归档文件名：iso11820-2026-06-30.0.log.gz -->
+            <fileNamePattern>${LOG_DIR}/${LOG_FILE}-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+            <maxHistory>${MAX_HISTORY}</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- ============================================================ -->
+    <!--  异步文件输出（提升性能，不阻塞业务线程）                         -->
+    <!-- ============================================================ -->
+    <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>512</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+        <neverBlock>true</neverBlock>
+        <appender-ref ref="FILE" />
+    </appender>
+
+    <!-- ============================================================ -->
+    <!--  Logger 级别配置                                              -->
+    <!-- ============================================================ -->
+
+    <!-- 项目根 logger -->
+    <logger name="com.project" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ASYNC_FILE" />
+    </logger>
+
+    <!-- 核心引擎 logger -->
+    <logger name="com.iso11820.core" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ASYNC_FILE" />
+    </logger>
+
+    <!-- 导出模块 logger -->
+    <logger name="EXPORT" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ASYNC_FILE" />
+    </logger>
+
+    <!-- CSV 模块 logger -->
+    <logger name="CSV" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ASYNC_FILE" />
+    </logger>
+
+    <!-- 文件管理 logger -->
+    <logger name="FILE" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ASYNC_FILE" />
+    </logger>
+
+    <!-- SQLite 驱动日志（仅 WARN） -->
+    <logger name="org.sqlite" level="WARN" />
+
+    <!-- 第三方库日志抑制 -->
+    <logger name="org.apache" level="WARN" />
+
+    <!-- ============================================================ -->
+    <!--  根 Logger（兜底）                                             -->
+    <!-- ============================================================ -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>
