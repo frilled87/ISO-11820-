@@ -9,6 +9,11 @@ import com.iso11820.dao.TestMasterDao;
 import com.iso11820.dao.impl.CalibrationRecordsDaoImpl;
 import com.iso11820.dao.impl.TestMasterDaoImpl;
 import com.iso11820.entity.CalibrationRecords;
+import com.iso11820.service.CsvDataService;
+import com.iso11820.service.ExcelReportService;
+import com.iso11820.service.PdfReportService;
+import com.iso11820.service.entity.DataPoint;
+import com.iso11820.service.model.ExportTestInfo;
 import com.iso11820.ui.dialog.NewTestDialogController;
 import com.iso11820.ui.dialog.TestRecordDialogController;
 
@@ -44,6 +49,7 @@ import org.knowm.xchart.style.markers.SeriesMarkers;
 
 import javax.swing.SwingUtilities;
 import java.awt.Color;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -114,6 +120,7 @@ public class MainController {
     // ==================== DAO ====================
     private final TestMasterDao testDao = new TestMasterDaoImpl();
     private final CalibrationRecordsDao calibDao = new CalibrationRecordsDaoImpl();
+    private final CsvDataService csvService = CsvDataService.getInstance();
 
     // ==================== XChart ====================
     private SwingNode chartSwingNode;
@@ -159,10 +166,10 @@ public class MainController {
         xyChart.getStyler().setMarkerSize(0);
         xyChart.getStyler().setToolTipsEnabled(false);
 
-        seriesTf1 = xyChart.addSeries("炉温1 (TF1)", new double[0], new double[0]);
-        seriesTf2 = xyChart.addSeries("炉温2 (TF2)", new double[0], new double[0]);
-        seriesTs  = xyChart.addSeries("表面温 (TS)",  new double[0], new double[0]);
-        seriesTc  = xyChart.addSeries("中心温 (TC)",  new double[0], new double[0]);
+        seriesTf1 = xyChart.addSeries("炉温1 (TF1)", new double[]{0}, new double[]{25.0});
+        seriesTf2 = xyChart.addSeries("炉温2 (TF2)", new double[]{0}, new double[]{25.0});
+        seriesTs  = xyChart.addSeries("表面温 (TS)",  new double[]{0}, new double[]{25.0});
+        seriesTc  = xyChart.addSeries("中心温 (TC)",  new double[]{0}, new double[]{25.0});
 
         seriesTf1.setLineColor(new Color(0xE5, 0x39, 0x35)); seriesTf1.setLineWidth(1.5f);
         seriesTf1.setMarker(SeriesMarkers.NONE);
@@ -297,7 +304,25 @@ public class MainController {
     }
 
     @FXML
-    private void handleSettings() { appendLog("【预留】参数设置", "info"); }
+    private void handleSettings() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/SettingsDialog.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("参数设置");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(tabPane.getScene().getWindow());
+            stage.setResizable(false);
+            stage.showAndWait();
+            appendLog("参数设置已更新", "info");
+        } catch (Exception e) {
+            e.printStackTrace();
+            String msg = e.getMessage();
+            if (e.getCause() != null) msg = e.getCause().toString();
+            appendLog("参数设置窗口加载失败: " + msg, "error");
+        }
+    }
 
     @FXML
     private void handleTestRecord() {
@@ -321,6 +346,7 @@ public class MainController {
             if (ctrl.isSaved()) {
                 appendLog("试验记录已保存: " + currentProductId, "info");
                 updateButtonStates(testMaster.getCurrentState());
+                handleQuery(); // 刷新记录查询列表
             }
         } catch (Exception e) {
             appendLog("打开试验记录窗口失败: " + e.getMessage(), "error");
@@ -406,7 +432,94 @@ public class MainController {
 
     @FXML
     private void handleExportExcel() {
-        appendLog("【预留】导出 Excel 功能", "info");
+        Object[] selected = queryTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            appendLog("请先选择一条试验记录", "warn");
+            return;
+        }
+        try {
+            String testId = (String) selected[0];
+            String productId = (String) selected[1];
+            com.iso11820.entity.TestMaster tm = testDao.getByKey(productId, testId);
+            if (tm == null) {
+                appendLog("未找到试验记录: " + testId, "error");
+                return;
+            }
+            ExportTestInfo info = buildExportInfo(tm);
+            java.nio.file.Path file = ExcelReportService.getInstance().exportSingle(info);
+            appendLog("Excel 报告已导出: " + file.toAbsolutePath(), "info");
+            java.awt.Desktop.getDesktop().open(file.getParent().toFile());
+        } catch (Exception e) {
+            appendLog("导出 Excel 失败: " + e.getMessage(), "error");
+        }
+    }
+
+    @FXML
+    private void handleExportPdf() {
+        Object[] selected = queryTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            appendLog("请先选择一条试验记录", "warn");
+            return;
+        }
+        try {
+            String testId = (String) selected[0];
+            String productId = (String) selected[1];
+            com.iso11820.entity.TestMaster tm = testDao.getByKey(productId, testId);
+            if (tm == null) {
+                appendLog("未找到试验记录: " + testId, "error");
+                return;
+            }
+            ExportTestInfo info = buildExportInfo(tm);
+            java.nio.file.Path file = PdfReportService.getInstance().export(info);
+            appendLog("PDF 报告已导出: " + file.toAbsolutePath(), "info");
+            java.awt.Desktop.getDesktop().open(file.getParent().toFile());
+        } catch (Exception e) {
+            appendLog("导出 PDF 失败: " + e.getMessage(), "error");
+        }
+    }
+
+    /**
+     * 从 TestMaster 实体构建导出用的 ExportTestInfo。
+     */
+    private ExportTestInfo buildExportInfo(com.iso11820.entity.TestMaster tm) {
+        ExportTestInfo info = new ExportTestInfo();
+        info.setProductId(tm.getProductid());
+        info.setTestId(tm.getTestid());
+        info.setTestDate(tm.getTestdate());
+        info.setOperator(tm.getOperator());
+        info.setAccording(tm.getAccording() != null ? tm.getAccording() : "ISO 11820:2022");
+        info.setApparatusName(tm.getApparatusname());
+        info.setApparatusId(tm.getApparatusid());
+        info.setAmbientTemp(tm.getAmbtemp() != null ? tm.getAmbtemp() : 0);
+        info.setAmbientHumidity(tm.getAmbhumi() != null ? tm.getAmbhumi() : 0);
+        info.setPreWeight(tm.getPreweight() != null ? tm.getPreweight() : 0);
+        info.setPostWeight(tm.getPostweight() != null ? tm.getPostweight() : 0);
+        info.setLostWeight(tm.getLostweight() != null ? tm.getLostweight() : 0);
+        info.setLostWeightPer(tm.getLostweightPer() != null ? tm.getLostweightPer() : 0);
+        info.setMaxTf1(tm.getMaxtf1() != null ? tm.getMaxtf1() : 0);
+        info.setMaxTf2(tm.getMaxtf2() != null ? tm.getMaxtf2() : 0);
+        info.setMaxTs(tm.getMaxts() != null ? tm.getMaxts() : 0);
+        info.setMaxTc(tm.getMaxtc() != null ? tm.getMaxtc() : 0);
+        info.setFinalTf1(tm.getFinaltf1() != null ? tm.getFinaltf1() : 0);
+        info.setFinalTf2(tm.getFinaltf2() != null ? tm.getFinaltf2() : 0);
+        info.setFinalTs(tm.getFinalts() != null ? tm.getFinalts() : 0);
+        info.setFinalTc(tm.getFinaltc() != null ? tm.getFinaltc() : 0);
+        info.setDeltaTf1(tm.getDeltatf1() != null ? tm.getDeltatf1() : 0);
+        info.setDeltaTf2(tm.getDeltatf2() != null ? tm.getDeltatf2() : 0);
+        info.setDeltaTf(tm.getDeltatf() != null ? tm.getDeltatf() : 0);
+        info.setDeltaTs(tm.getDeltats() != null ? tm.getDeltats() : 0);
+        info.setDeltaTc(tm.getDeltatc() != null ? tm.getDeltatc() : 0);
+        info.setTotalTestTime(tm.getTotaltesttime() != null ? tm.getTotaltesttime() : 0);
+        info.setConstPower(tm.getConstpower() != null ? tm.getConstpower() : 0);
+        info.setFlameTime(tm.getFlametime() != null ? tm.getFlametime() : 0);
+        info.setFlameDuration(tm.getFlameduration() != null ? tm.getFlameduration() : 0);
+        info.setMemo(tm.getMemo() != null ? tm.getMemo() : "");
+        info.setReportNo(tm.getRptno() != null ? tm.getRptno() : "");
+
+        boolean passed = info.getDeltaTf() <= 50.0 && info.getLostWeightPer() <= 50.0 && info.getFlameDuration() < 5;
+        info.setPassed(passed);
+        info.setConclusion(passed ? "通过 — 符合不燃性材料标准" : "不通过 — 不符合不燃性材料标准");
+        return info;
     }
 
     // ==================== Tab 3: 设备校准 ====================
@@ -439,6 +552,7 @@ public class MainController {
             r.setPassedCriteria(1);
             r.setRemarks("仿真校准");
             r.setCreatedAt(java.time.LocalDateTime.now().toString());
+            r.setTemperatureData("{}"); // 空JSON，满足NOT NULL约束
 
             // 模拟 9 个测温点
             r.setTempA1(749.0); r.setTempA2(750.5); r.setTempA3(751.0);
@@ -566,6 +680,19 @@ public class MainController {
                 if (msg != null) appendLog(msg, msg.contains("终止")||msg.contains("无效")||msg.contains("不足")?"warn": msg.contains("错误")||msg.contains("失败")||msg.contains("未保存")?"error":"info");
             });
             SwingUtilities.invokeLater(() -> updateChart(data));
+
+            // CSV 时序数据记录：Recording 状态下每秒追加一行
+            if (state == TestState.RECORDING && data != null
+                    && currentProductId != null && currentTestId != null) {
+                DataPoint dp = new DataPoint();
+                dp.setTimeSeconds(duration);
+                dp.setTf1(data.getTf1());
+                dp.setTf2(data.getTf2());
+                dp.setTs(data.getTs());
+                dp.setTc(data.getTc());
+                dp.settCal(data.gettCal());
+                csvService.appendRow(currentProductId, currentTestId, dp);
+            }
         }
     }
 }

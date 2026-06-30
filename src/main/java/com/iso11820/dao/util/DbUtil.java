@@ -321,8 +321,19 @@ public final class DbUtil {
         // 先移除所有注释行，再用分号分割 SQL 语句
         String[] statements = stripComments(schemaSql).split(";");
 
+        // 确保数据库文件所在目录存在
+        Path dbFile = Paths.get(dbPath);
+        Path parentDir = dbFile.getParent();
+        if (parentDir != null && !Files.exists(parentDir)) {
+            try {
+                Files.createDirectories(parentDir);
+            } catch (IOException e) {
+                throw new DaoException("创建数据库目录失败: " + parentDir, e);
+            }
+        }
+
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:sqlite:" + Paths.get(dbPath).toAbsolutePath().toString().replace('\\', '/'));
+                "jdbc:sqlite:" + dbFile.toAbsolutePath().toString().replace('\\', '/'));
              Statement stmt = conn.createStatement()) {
 
             for (String sql : statements) {

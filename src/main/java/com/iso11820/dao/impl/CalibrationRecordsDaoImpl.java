@@ -52,6 +52,7 @@ public class CalibrationRecordsDaoImpl extends BaseDao<CalibrationRecords>
     @Override
     public int insert(CalibrationRecords r) {
         // 命中索引：PK_CalibrationRecords (Id) — 主键唯一性校验
+        // 共 38 个字段，38 个占位符，严格对齐 schema.sql 表结构
         String sql = "INSERT INTO CalibrationRecords ("
                 + "Id, CalibrationDate, CalibrationType, ApparatusId, Operator, "
                 + "TemperatureData, UniformityResult, MaxDeviation, AverageTemperature, "
@@ -64,16 +65,16 @@ public class CalibrationRecordsDaoImpl extends BaseDao<CalibrationRecords>
                 + "TAvgDevAxis, TAvgDevLevel, "
                 + "CenterTempData, Memo"
                 + ") VALUES ("
-                + "?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, "
-                + "?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, "
-                + "?, ?, ?, "
-                + "?, ?, ?, "
-                + "?, ?, ?, "
-                + "?, ?, "
-                + "?, ?"
+                + "?,?,?,?,?,"
+                + "?,?,?,?,"
+                + "?,?,?,"
+                + "?,?,?,?,?,?,?,?,?,"
+                + "?,?,?,?,"
+                + "?,?,?,"
+                + "?,?,?,"
+                + "?,?,?,"
+                + "?,?,"
+                + "?,?"
                 + ")";
         return executeUpdate(sql,
                 // 基本信息

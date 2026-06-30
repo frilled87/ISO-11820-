@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Priority?>
@@ -255,6 +256,11 @@
                         <Button text="导出 Excel" prefWidth="100" prefHeight="30"
                                 styleClass="normal-button"
                                 onAction="#handleExportExcel">
+                            <font><Font name="Microsoft YaHei" size="12"/></font>
+                        </Button>
+                        <Button text="导出 PDF" prefWidth="100" prefHeight="30"
+                                styleClass="normal-button"
+                                onAction="#handleExportPdf">
                             <font><Font name="Microsoft YaHei" size="12"/></font>
                         </Button>
                     </HBox>

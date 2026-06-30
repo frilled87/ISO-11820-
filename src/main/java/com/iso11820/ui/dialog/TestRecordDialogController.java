@@ -202,6 +202,10 @@ public class TestRecordDialogController {
 
             dbEntity.setFinaltf1(r.finalTf1()); dbEntity.setFinaltf2(r.finalTf2());
             dbEntity.setFinalts(r.finalTs()); dbEntity.setFinaltc(r.finalTc());
+            dbEntity.setFinaltf1Time(r.totalRecordTime());
+            dbEntity.setFinaltf2Time(r.totalRecordTime());
+            dbEntity.setFinaltsTime(r.totalRecordTime());
+            dbEntity.setFinaltcTime(r.totalRecordTime());
 
             dbEntity.setDeltatf1(r.deltaTf1()); dbEntity.setDeltatf2(r.deltaTf2());
             dbEntity.setDeltatf(r.deltaTf()); dbEntity.setDeltats(r.deltaTs());
@@ -219,6 +223,7 @@ public class TestRecordDialogController {
             closeDialog();
 
         } catch (Exception e) {
+            e.printStackTrace();
             showAlert("保存试验记录失败: " + e.getMessage());
         }
     }

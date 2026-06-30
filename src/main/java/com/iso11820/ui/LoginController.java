@@ -137,7 +137,11 @@ public class LoginController {
             mainStage.show();
 
         } catch (IOException e) {
+            e.printStackTrace();
             showAlert("系统错误", "无法加载主界面: " + e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("系统错误", "无法加载主界面: " + e.toString());
         }
     }
 

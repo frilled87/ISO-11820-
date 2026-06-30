@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.iso11820.ui.dialog.SettingsDialogController"
+      spacing="12" prefWidth="420">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="仿真参数设置">
+        <font><Font name="Microsoft YaHei" size="16"/></font>
+    </Label>
+    <Separator/>
+
+    <GridPane hgap="12" vgap="10">
+        <padding><Insets top="8" right="0" bottom="8" left="0"/></padding>
+
+        <Label text="目标炉温 (°C):" GridPane.rowIndex="0" GridPane.columnIndex="0">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Label>
+        <TextField fx:id="targetTempField" promptText="750.0" prefWidth="120"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="升温速率 (°C/s):" GridPane.rowIndex="1" GridPane.columnIndex="0">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Label>
+        <TextField fx:id="heatingRateField" promptText="40.0" prefWidth="120"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="温度波动幅度 (°C):" GridPane.rowIndex="2" GridPane.columnIndex="0">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Label>
+        <TextField fx:id="fluctuationField" promptText="0.5" prefWidth="120"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="标准试验时长 (秒):" GridPane.rowIndex="3" GridPane.columnIndex="0">
+            <font><Font name="Microsoft YaHei" size="12"/></font>
+        </Label>
+        <TextField fx:id="durationField" promptText="3600" prefWidth="120"
+                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Separator/>
+
+    <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button text="确认" onAction="#handleConfirm" prefWidth="80"
+                style="-fx-background-color: #1976D2; -fx-text-fill: white;"/>
+        <Button text="取消" onAction="#handleCancel" prefWidth="80"/>
+    </HBox>
+</VBox>
