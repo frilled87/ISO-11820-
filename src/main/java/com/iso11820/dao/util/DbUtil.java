@@ -318,8 +318,8 @@ public final class DbUtil {
             throw new DaoException("建表脚本 sql/schema.sql 内容为空");
         }
 
-        // 按分号分割 SQL 语句，过滤空语句和纯注释行
-        String[] statements = schemaSql.split(";");
+        // 先移除所有注释行，再用分号分割 SQL 语句
+        String[] statements = stripComments(schemaSql).split(";");
 
         try (Connection conn = DriverManager.getConnection(
                 "jdbc:sqlite:" + Paths.get(dbPath).toAbsolutePath().toString().replace('\\', '/'));
@@ -327,7 +327,7 @@ public final class DbUtil {
 
             for (String sql : statements) {
                 String trimmed = sql.trim();
-                if (trimmed.isEmpty() || trimmed.startsWith("--")) {
+                if (trimmed.isEmpty()) {
                     continue;
                 }
                 try {
@@ -345,6 +345,23 @@ public final class DbUtil {
         } catch (SQLException e) {
             throw new DaoException("数据库初始化失败: " + dbPath, e);
         }
+    }
+
+    /**
+     * 移除 SQL 脚本中的注释行（以 -- 开头的行），保留空行以保持结构。
+     *
+     * @param sql SQL 脚本全文
+     * @return 移除注释后的 SQL
+     */
+    private static String stripComments(String sql) {
+        StringBuilder result = new StringBuilder();
+        for (String line : sql.split("\n")) {
+            String trimmed = line.trim();
+            if (!trimmed.startsWith("--")) {
+                result.append(line).append('\n');
+            }
+        }
+        return result.toString();
     }
 
     /**

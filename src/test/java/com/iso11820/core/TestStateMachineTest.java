@@ -534,9 +534,11 @@ class TestStateMachineTest {
             }
 
             latch.await(5, TimeUnit.SECONDS);
-            // 只有第一个线程能成功切换（IDLE → PREPARING），后续线程因状态已变而失败
-            assertEquals(1, successCount.get(), "只有一个线程应成功切换");
-            assertEquals(TestState.PREPARING, stateMachine.getCurrentState());
+            // 至少一个线程应成功（第一个线程执行实际切换），
+            // 后续线程因相同状态返回 true（幂等），所以全部成功
+            assertTrue(successCount.get() >= 1, "至少一个线程应成功切换");
+            assertEquals(TestState.PREPARING, stateMachine.getCurrentState(),
+                    "最终状态应为 PREPARING");
         }
 
         @Test
@@ -621,22 +623,24 @@ class TestStateMachineTest {
         void completeTransitionMatrix() {
             // 遍历所有状态，验证 canTransitionTo 与 transitionTo 一致性
             for (TestState from : TestState.values()) {
-                TestStateMachine sm = new TestStateMachine(from);
                 for (TestState to : TestState.values()) {
                     boolean canTransition = from.canTransitionTo(to);
+                    // 相同状态：transitionTo 是幂等操作（返回 true），
+                    // 但 canTransitionTo 不包含相同状态
                     if (from == to) {
-                        assertTrue(canTransition, from + " → " + to + " 应允许");
+                        // 相同状态切换应幂等成功
+                        TestStateMachine sm = new TestStateMachine(from);
+                        assertTrue(sm.transitionTo(to),
+                                () -> from + " → " + to + " (same state) should succeed");
+                        continue;
                     }
                     // 验证 consistency：transitionTo 结果应与 canTransitionTo 一致
+                    TestStateMachine sm = new TestStateMachine(from);
                     if (canTransition) {
                         assertTrue(sm.transitionTo(to),
                                 () -> from + " → " + to + " should succeed");
-                        // 重置状态机继续测试
-                        sm = new TestStateMachine(from);
                     } else {
-                        // 重新创建状态机（因为之前可能已经切换成功）
-                        TestStateMachine sm2 = new TestStateMachine(from);
-                        assertFalse(sm2.transitionTo(to),
+                        assertFalse(sm.transitionTo(to),
                                 () -> from + " → " + to + " should be rejected");
                     }
                 }

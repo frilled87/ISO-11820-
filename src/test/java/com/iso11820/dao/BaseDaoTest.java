@@ -50,8 +50,8 @@ public abstract class BaseDaoTest {
         // 设置 DbUtil 路径并强制重新初始化
         DbUtil.setDbPath(tempDbPath.toString());
         DbUtil.resetInitialization();
-        // 触发初始化（建表 + 初始数据）
-        DbUtil.getConnection(); // 内部自动调用 initDatabase()
+        // 触发初始化（建表 + 初始数据），用完立即关闭连接
+        DbUtil.closeConnection(DbUtil.getConnection());
         System.out.println("[Test] 临时数据库已创建: " + tempDbPath);
     }
 
@@ -61,6 +61,8 @@ public abstract class BaseDaoTest {
     @AfterEach
     void destroyDatabase() throws IOException {
         DbUtil.resetInitialization();
+        // 短暂等待确保所有连接已释放
+        try { Thread.sleep(50); } catch (InterruptedException ignored) { }
         if (tempDbPath != null) {
             Files.deleteIfExists(tempDbPath);
             System.out.println("[Test] 临时数据库已删除: " + tempDbPath);
