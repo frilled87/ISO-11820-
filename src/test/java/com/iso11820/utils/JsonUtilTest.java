@@ -87,7 +87,7 @@ class JsonUtilTest {
         @Test
         @DisplayName("目标类型为 null 抛异常")
         void nullClassThrows() {
-            assertThrows(IllegalArgumentException.class, () -> JsonUtil.toObject("{}", null));
+            assertThrows(IllegalArgumentException.class, () -> JsonUtil.toObject("{}", (Class<?>) null));
         }
 
         @Test

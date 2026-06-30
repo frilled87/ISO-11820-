@@ -66,12 +66,7 @@
             <version>7.2.5</version>
             <type>pom</type>
         </dependency>
-        <!-- iText7 PDF 高级排版（中文等复杂脚本渲染） -->
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>pdfCalligraph</artifactId>
-            <version>7.2.5</version>
-        </dependency>
+        <!-- iText7 PDF 导出（中文通过系统字体支持） -->
 
         <!-- 6. JSON 工具 -->
         <dependency>
@@ -174,7 +169,7 @@
                         <!-- 排除实体类（POJO） -->
                         <exclude>com/iso11820/entity/**</exclude>
                         <!-- 排除使用示例类 -->
-                        <exclude>com/project/service/Round*</exclude>
+                        <exclude>com/iso11820/service/Round*</exclude>
                     </excludes>
                 </configuration>
             </plugin>

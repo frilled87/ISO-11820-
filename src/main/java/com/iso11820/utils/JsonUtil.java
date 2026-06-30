@@ -98,7 +98,7 @@ public final class JsonUtil {
         return MapperHolder.INSTANCE;
     }
 
-    private JsonUtil() {
+    JsonUtil() {
         throw new UnsupportedOperationException("工具类不允许实例化");
     }
 

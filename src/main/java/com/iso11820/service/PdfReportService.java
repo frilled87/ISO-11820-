@@ -10,11 +10,11 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.canvas.draw.SolidLine;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.*;
-import com.itextpdf.layout.properties.HorizontalAlignment;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.layout.properties.VerticalAlignment;
@@ -524,7 +524,7 @@ public final class PdfReportService {
 
     /** 分隔线 */
     private LineSeparator createDivider() {
-        return new LineSeparator(new SolidBorder(new DeviceRgb(200, 200, 210), 0.5f));
+        return new LineSeparator(new SolidLine(0.5f));
     }
 
     /** 空值判断 */

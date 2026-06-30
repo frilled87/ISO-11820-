@@ -100,7 +100,7 @@ public final class DateUtil {
     //  禁止实例化
     // ============================================================
 
-    private DateUtil() {
+    DateUtil() {
         throw new UnsupportedOperationException("工具类不允许实例化");
     }
 
@@ -248,7 +248,13 @@ public final class DateUtil {
             throw new IllegalArgumentException("日期格式不能为空");
         }
         try {
-            return LocalDateTime.parse(dateTimeStr, DateTimeFormatter.ofPattern(pattern));
+            DateTimeFormatter fmt = DateTimeFormatter.ofPattern(pattern);
+            try {
+                return LocalDateTime.parse(dateTimeStr, fmt);
+            } catch (java.time.format.DateTimeParseException e1) {
+                // 纯日期格式回退：先解析为 LocalDate，再转为当日 00:00:00
+                return LocalDate.parse(dateTimeStr, fmt).atStartOfDay();
+            }
         } catch (Exception e) {
             throw new RuntimeException("日期解析失败: " + dateTimeStr + "，期望格式: " + pattern, e);
         }

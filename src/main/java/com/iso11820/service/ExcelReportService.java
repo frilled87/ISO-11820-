@@ -5,19 +5,18 @@ import com.iso11820.service.model.ExportTestInfo;
 import com.iso11820.utils.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.xddf.usermodel.XDDFDataSourcesFactory;
-import org.apache.poi.xddf.usermodel.XDDFDataSource;
-import org.apache.poi.xddf.usermodel.XDDFNumericalDataSource;
 import org.apache.poi.xddf.usermodel.chart.AxisCrosses;
 import org.apache.poi.xddf.usermodel.chart.AxisPosition;
 import org.apache.poi.xddf.usermodel.chart.ChartTypes;
 import org.apache.poi.xddf.usermodel.chart.MarkerStyle;
-import org.apache.poi.xddf.usermodel.chart.XDDFChart;
+import org.apache.poi.xddf.usermodel.chart.XDDFCategoryAxis;
 import org.apache.poi.xddf.usermodel.chart.XDDFChartAxis;
 import org.apache.poi.xddf.usermodel.chart.XDDFChartData;
-import org.apache.poi.xddf.usermodel.chart.XDDFCategoryDataSource;
+import org.apache.poi.xddf.usermodel.chart.XDDFDataSourcesFactory;
+import org.apache.poi.xddf.usermodel.chart.XDDFDataSource;
 import org.apache.poi.xddf.usermodel.chart.XDDFLineChartData;
-import org.apache.poi.xddf.usermodel.chart.XDDFSeries;
+import org.apache.poi.xddf.usermodel.chart.XDDFNumericalDataSource;
+import org.apache.poi.xddf.usermodel.chart.XDDFValueAxis;
 import org.apache.poi.xssf.usermodel.*;
 import org.slf4j.Logger;
 
@@ -352,9 +351,9 @@ public final class ExcelReportService {
                 dataSheet, new CellRangeAddress(1, dataSize, 4, 4));
 
         // 创建折线图
-        XDDFChartAxis bottomAxis = chart.createCategoryAxis(AxisPosition.BOTTOM);
+        XDDFCategoryAxis bottomAxis = chart.createCategoryAxis(AxisPosition.BOTTOM);
         bottomAxis.setTitle("时间 (秒)");
-        XDDFChartAxis leftAxis = chart.createValueAxis(AxisPosition.LEFT);
+        XDDFValueAxis leftAxis = (XDDFValueAxis) chart.createValueAxis(AxisPosition.LEFT);
         leftAxis.setTitle("温度 (°C)");
         leftAxis.setCrosses(AxisCrosses.AUTO_ZERO);
 

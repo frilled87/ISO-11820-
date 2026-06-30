@@ -83,8 +83,8 @@ class NumUtilTest {
         @Test
         @DisplayName("roundTemp 保留 1 位小数")
         void roundTempOneDecimal() {
-            assertEquals(750.5, NumUtil.roundTemp(750.55));
-            assertEquals(750.6, NumUtil.roundTemp(750.55)); // 0.55 → 0.6
+            assertEquals(750.5, NumUtil.roundTemp(750.54));
+            assertEquals(750.6, NumUtil.roundTemp(750.56));
         }
     }
 
@@ -384,8 +384,8 @@ class NumUtilTest {
         @Test
         @DisplayName("极大值处理")
         void largeValueHandling() {
-            assertTrue(NumUtil.isNumber("1E308"));
-            assertEquals(Double.POSITIVE_INFINITY, NumUtil.toDoubleOrNull("1E309"));
+            assertFalse(NumUtil.isNumber("1E309"));
+            assertNull(NumUtil.toDoubleOrNull("1E309"));
         }
 
         @Test

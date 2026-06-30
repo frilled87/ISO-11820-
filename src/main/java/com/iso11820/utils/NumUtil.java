@@ -58,7 +58,7 @@ public final class NumUtil {
     /** 小数位上限 */
     private static final int MAX_SCALE = 10;
 
-    private NumUtil() {
+    NumUtil() {
         throw new UnsupportedOperationException("工具类不允许实例化");
     }
 
@@ -147,7 +147,8 @@ public final class NumUtil {
             return null;
         }
         try {
-            return Double.parseDouble(str.trim());
+            double v = Double.parseDouble(str.trim());
+            return (Double.isNaN(v) || Double.isInfinite(v)) ? null : v;
         } catch (NumberFormatException e) {
             return null;
         }
@@ -254,8 +255,8 @@ public final class NumUtil {
             return false;
         }
         try {
-            Double.parseDouble(str.trim());
-            return true;
+            double v = Double.parseDouble(str.trim());
+            return !Double.isNaN(v) && !Double.isInfinite(v);
         } catch (NumberFormatException e) {
             return false;
         }
