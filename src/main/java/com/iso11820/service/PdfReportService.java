@@ -305,7 +305,7 @@ public final class PdfReportService {
         Paragraph subTitle = new Paragraph("报告编号：" + (info.getReportNo().isEmpty() ? info.getTestId() : info.getReportNo()))
                 .setFont(cFont)
                 .setFontSize(10)
-                .setFontColor(DeviceRgb.GRAY)
+                .setFontColor(ColorConstants.GRAY)
                 .setTextAlignment(TextAlignment.CENTER);
         document.add(subTitle);
 
@@ -420,7 +420,7 @@ public final class PdfReportService {
 
         // 判定标准
         Paragraph criteria = new Paragraph("判定标准（ISO 11820 简化版）：综合温升 ΔTf ≤ 50°C 且 失重率 ≤ 50% 且 火焰持续时间 < 5 秒")
-                .setFont(cFont).setFontSize(9).setFontColor(DeviceRgb.GRAY);
+                .setFont(cFont).setFontSize(9).setFontColor(ColorConstants.GRAY);
         document.add(criteria);
         document.add(new Paragraph("").setHeight(6));
 
@@ -475,7 +475,7 @@ public final class PdfReportService {
                 .setBackgroundColor(new DeviceRgb(248, 248, 250));
         Paragraph placeholderText = new Paragraph("温度曲线图\n（请参见 Excel 报告 Sheet3 或使用 XChart 生成）")
                 .setFont(cFont).setFontSize(10)
-                .setFontColor(DeviceRgb.GRAY)
+                .setFontColor(ColorConstants.GRAY)
                 .setTextAlignment(TextAlignment.CENTER);
         cell.add(placeholderText);
         cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
@@ -503,7 +503,7 @@ public final class PdfReportService {
         if (!info.getMemo().isEmpty()) {
             document.add(new Paragraph("").setHeight(6));
             Paragraph memo = new Paragraph("备注：" + info.getMemo())
-                    .setFont(cFont).setFontSize(8).setFontColor(DeviceRgb.GRAY);
+                    .setFont(cFont).setFontSize(8).setFontColor(ColorConstants.GRAY);
             document.add(memo);
         }
 
@@ -513,7 +513,7 @@ public final class PdfReportService {
         String footerText = config.getString("Report.ReportFooter", "本报告由 ISO 11820 仿真系统自动生成");
         Paragraph footer = new Paragraph(footerText)
                 .setFont(cFont).setFontSize(7)
-                .setFontColor(DeviceRgb.GRAY)
+                .setFontColor(ColorConstants.GRAY)
                 .setTextAlignment(TextAlignment.CENTER);
         document.add(footer);
     }

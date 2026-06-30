@@ -372,7 +372,6 @@ public final class ExcelReportService {
         series.setSmooth(false);
         // 设置线条颜色
         series.setMarkerStyle(MarkerStyle.NONE);
-        XDDFSolidFillExt fill = new XDDFSolidFillExt(XDDFColor.from(color));
         // 注：POI 5.x 中 Series 线条颜色设置方式有限，通过预设颜色实现
     }
 
