@@ -145,20 +145,20 @@ public class TestMasterDaoImpl extends BaseDao<TestMaster> implements TestMaster
                 + "WHERE productid = ? AND testid = ?";
         return executeUpdate(sql,
                 // 质量数据
-                tm.getPostweight(), tm.getLostweight(), tm.getLostweightPer(),
+                nvl(tm.getPostweight(), 0.0), nvl(tm.getLostweight(), 0.0), nvl(tm.getLostweightPer(), 0.0),
                 // 试验过程
-                tm.getTotaltesttime(), tm.getConstpower(), tm.getPhenocode(),
-                tm.getFlametime(), tm.getFlameduration(),
+                nvl(tm.getTotaltesttime(), 0), nvl(tm.getConstpower(), 0), nvl(tm.getPhenocode(), ""),
+                nvl(tm.getFlametime(), 0), nvl(tm.getFlameduration(), 0),
                 // 温度最大值
-                tm.getMaxtf1(), tm.getMaxtf2(), tm.getMaxts(), tm.getMaxtc(),
-                tm.getMaxtf1Time(), tm.getMaxtf2Time(), tm.getMaxtsTime(), tm.getMaxtcTime(),
+                nvl(tm.getMaxtf1(), 0.0), nvl(tm.getMaxtf2(), 0.0), nvl(tm.getMaxts(), 0.0), nvl(tm.getMaxtc(), 0.0),
+                nvl(tm.getMaxtf1Time(), 0), nvl(tm.getMaxtf2Time(), 0), nvl(tm.getMaxtsTime(), 0), nvl(tm.getMaxtcTime(), 0),
                 // 温度最终值
-                tm.getFinaltf1(), tm.getFinaltf2(), tm.getFinalts(), tm.getFinaltc(),
-                tm.getFinaltf1Time(), tm.getFinaltf2Time(), tm.getFinaltsTime(), tm.getFinaltcTime(),
+                nvl(tm.getFinaltf1(), 0.0), nvl(tm.getFinaltf2(), 0.0), nvl(tm.getFinalts(), 0.0), nvl(tm.getFinaltc(), 0.0),
+                nvl(tm.getFinaltf1Time(), 0), nvl(tm.getFinaltf2Time(), 0), nvl(tm.getFinaltsTime(), 0), nvl(tm.getFinaltcTime(), 0),
                 // 温升
-                tm.getDeltatf1(), tm.getDeltatf2(), tm.getDeltatf(), tm.getDeltats(), tm.getDeltatc(),
+                nvl(tm.getDeltatf1(), 0.0), nvl(tm.getDeltatf2(), 0.0), nvl(tm.getDeltatf(), 0.0), nvl(tm.getDeltats(), 0.0), nvl(tm.getDeltatc(), 0.0),
                 // 备注与标记
-                tm.getMemo(), tm.getFlag(),
+                nvl(tm.getMemo(), ""), nvl(tm.getFlag(), ""),
                 // WHERE 条件
                 tm.getProductid(), tm.getTestid());
     }
@@ -338,47 +338,46 @@ public class TestMasterDaoImpl extends BaseDao<TestMaster> implements TestMaster
         Connection conn = null;
         try {
             conn = DbUtil.beginTransaction();
-            // 使用原始 JDBC 执行更新（复用事务连接）
             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql);
             try {
                 int idx = 1;
                 // 质量数据
-                pstmt.setObject(idx++, tm.getPostweight());
-                pstmt.setObject(idx++, tm.getLostweight());
-                pstmt.setObject(idx++, tm.getLostweightPer());
+                pstmt.setObject(idx++, nvl(tm.getPostweight(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getLostweight(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getLostweightPer(), 0.0));
                 // 试验过程
-                pstmt.setObject(idx++, tm.getTotaltesttime());
-                pstmt.setObject(idx++, tm.getConstpower());
-                pstmt.setObject(idx++, tm.getPhenocode());
-                pstmt.setObject(idx++, tm.getFlametime());
-                pstmt.setObject(idx++, tm.getFlameduration());
+                pstmt.setObject(idx++, nvl(tm.getTotaltesttime(), 0));
+                pstmt.setObject(idx++, nvl(tm.getConstpower(), 0));
+                pstmt.setObject(idx++, nvl(tm.getPhenocode(), ""));
+                pstmt.setObject(idx++, nvl(tm.getFlametime(), 0));
+                pstmt.setObject(idx++, nvl(tm.getFlameduration(), 0));
                 // 温度最大值
-                pstmt.setObject(idx++, tm.getMaxtf1());
-                pstmt.setObject(idx++, tm.getMaxtf2());
-                pstmt.setObject(idx++, tm.getMaxts());
-                pstmt.setObject(idx++, tm.getMaxtc());
-                pstmt.setObject(idx++, tm.getMaxtf1Time());
-                pstmt.setObject(idx++, tm.getMaxtf2Time());
-                pstmt.setObject(idx++, tm.getMaxtsTime());
-                pstmt.setObject(idx++, tm.getMaxtcTime());
+                pstmt.setObject(idx++, nvl(tm.getMaxtf1(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getMaxtf2(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getMaxts(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getMaxtc(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getMaxtf1Time(), 0));
+                pstmt.setObject(idx++, nvl(tm.getMaxtf2Time(), 0));
+                pstmt.setObject(idx++, nvl(tm.getMaxtsTime(), 0));
+                pstmt.setObject(idx++, nvl(tm.getMaxtcTime(), 0));
                 // 温度最终值
-                pstmt.setObject(idx++, tm.getFinaltf1());
-                pstmt.setObject(idx++, tm.getFinaltf2());
-                pstmt.setObject(idx++, tm.getFinalts());
-                pstmt.setObject(idx++, tm.getFinaltc());
-                pstmt.setObject(idx++, tm.getFinaltf1Time());
-                pstmt.setObject(idx++, tm.getFinaltf2Time());
-                pstmt.setObject(idx++, tm.getFinaltsTime());
-                pstmt.setObject(idx++, tm.getFinaltcTime());
+                pstmt.setObject(idx++, nvl(tm.getFinaltf1(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getFinaltf2(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getFinalts(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getFinaltc(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getFinaltf1Time(), 0));
+                pstmt.setObject(idx++, nvl(tm.getFinaltf2Time(), 0));
+                pstmt.setObject(idx++, nvl(tm.getFinaltsTime(), 0));
+                pstmt.setObject(idx++, nvl(tm.getFinaltcTime(), 0));
                 // 温升
-                pstmt.setObject(idx++, tm.getDeltatf1());
-                pstmt.setObject(idx++, tm.getDeltatf2());
-                pstmt.setObject(idx++, tm.getDeltatf());
-                pstmt.setObject(idx++, tm.getDeltats());
-                pstmt.setObject(idx++, tm.getDeltatc());
+                pstmt.setObject(idx++, nvl(tm.getDeltatf1(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getDeltatf2(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getDeltatf(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getDeltats(), 0.0));
+                pstmt.setObject(idx++, nvl(tm.getDeltatc(), 0.0));
                 // 备注与标记
-                pstmt.setObject(idx++, tm.getMemo());
-                pstmt.setObject(idx++, tm.getFlag());
+                pstmt.setObject(idx++, nvl(tm.getMemo(), ""));
+                pstmt.setObject(idx++, nvl(tm.getFlag(), ""));
                 // WHERE 条件
                 pstmt.setObject(idx++, tm.getProductid());
                 pstmt.setObject(idx++, tm.getTestid());
@@ -396,5 +395,20 @@ public class TestMasterDaoImpl extends BaseDao<TestMaster> implements TestMaster
         } finally {
             DbUtil.closeTransactionConnection(conn);
         }
+    }
+
+    /** null-safe: 返回 value 或 defaultValue */
+    private static Double nvl(Double value, double defaultValue) {
+        return value != null ? value : defaultValue;
+    }
+
+    /** null-safe: 返回 value 或 defaultValue */
+    private static Integer nvl(Integer value, int defaultValue) {
+        return value != null ? value : defaultValue;
+    }
+
+    /** null-safe: 返回 value 或 defaultValue */
+    private static String nvl(String value, String defaultValue) {
+        return value != null ? value : defaultValue;
     }
 }

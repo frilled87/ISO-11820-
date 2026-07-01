@@ -1,198 +1,355 @@
-2026-06-30 22:42:34.812 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207
-2026-06-30 22:42:34.816 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:35.493 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:36.289 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:37.090 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:37.894 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:38.689 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:39.490 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:40.291 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:41.090 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:41.889 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:42.691 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:43.490 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:44.292 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:45.091 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:45.890 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:46.690 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:47.489 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:48.290 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:49.089 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:49.891 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:50.689 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:51.492 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:52.290 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:53.092 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:53.891 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:54.690 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:55.490 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:56.291 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:57.090 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:57.891 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:58.692 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:42:59.490 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:00.290 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:01.091 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:01.891 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:02.691 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:03.492 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:04.292 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:05.092 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:05.893 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:06.690 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:07.490 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:08.290 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:09.091 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:43:09.890 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:44:14.424 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\Reports
-2026-06-30 22:44:14.838 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 45 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:44:14.851 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 45 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260630-224207\sensor.csv
-2026-06-30 22:44:15.406 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260630-224207_报告.xlsx
-2026-06-30 22:44:22.688 INFO  [JavaFX Application Thread] EXPORT - 中文字体已加载（系统）: simsun.ttc
-2026-06-30 22:44:22.770 INFO  [JavaFX Application Thread] EXPORT - PDF 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260630-224207_报告.pdf
-2026-06-30 22:55:44.296 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518
-2026-06-30 22:55:44.301 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:44.917 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:45.713 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:46.516 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:47.315 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:48.114 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:48.914 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:49.714 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:50.514 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:51.317 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:52.117 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:52.917 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:53.716 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:54.515 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:55.317 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:56.119 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:56.914 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:57.718 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:58.518 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:55:59.316 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:00.116 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:00.915 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:01.716 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:02.514 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:03.316 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:04.117 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:04.916 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:05.715 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:06.514 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:07.318 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:08.114 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:08.915 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:09.716 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:10.516 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:11.314 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:12.117 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:12.918 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:13.716 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:14.515 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:15.316 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:16.114 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:16.917 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:17.714 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:18.514 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:19.318 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:20.116 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:20.916 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:21.715 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:22.515 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:23.317 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:24.117 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:24.915 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:25.714 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:26.516 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:27.314 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:28.114 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:28.915 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:29.714 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:30.519 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:31.317 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:32.113 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 22:56:32.916 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-225518\sensor.csv
-2026-06-30 23:04:00.323 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354
-2026-06-30 23:04:00.326 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:00.831 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:01.629 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:02.428 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:03.230 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:04.030 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:04.831 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:05.634 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:06.429 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:07.231 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:08.053 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:08.831 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:09.631 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:10.430 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:11.230 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:12.031 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:12.830 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:13.629 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:14.430 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:15.231 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:16.029 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:16.829 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:17.630 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:18.432 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:19.231 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:20.033 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:20.830 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:21.628 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:22.430 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:23.229 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:24.029 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:24.831 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:25.629 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:26.429 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:27.232 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:28.030 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:28.832 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:29.659 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:30.430 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:31.231 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:32.031 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:04:32.829 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230354\sensor.csv
-2026-06-30 23:07:10.816 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647
-2026-06-30 23:07:10.822 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:11.096 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:11.893 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:12.696 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:13.494 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:14.295 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:15.094 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:15.895 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:16.694 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:17.494 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:18.315 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:19.093 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:19.894 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:20.694 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:21.495 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:22.295 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:23.095 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:23.896 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:24.693 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:25.493 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:26.294 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:27.096 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:27.896 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:28.694 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:29.493 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:30.296 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:31.095 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:31.897 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:32.694 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:33.494 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:34.295 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:35.094 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:35.894 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:36.694 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:37.494 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:38.294 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:39.096 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:39.893 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
-2026-06-30 23:07:40.692 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260630-230647\sensor.csv
+2026-07-01 10:58:47.125 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814
+2026-07-01 10:58:47.128 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:47.197 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:47.997 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:48.796 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:49.598 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:50.398 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:51.198 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:51.998 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:52.798 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:53.598 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:54.399 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:55.199 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:56.000 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:56.797 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:57.598 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:58.398 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:59.197 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:58:59.995 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:00.798 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:01.600 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:02.398 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:03.197 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:03.997 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:04.797 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:05.598 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:06.400 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:07.198 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:07.999 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:08.798 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:09.599 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:10.398 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:11.199 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:11.998 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:12.798 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:13.598 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:14.398 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:15.198 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:15.999 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 10:59:16.798 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 11:00:40.765 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 39 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 11:00:40.777 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 39 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\2\20260701-105814\sensor.csv
+2026-07-01 11:00:41.272 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-105814_报告.xlsx
+2026-07-01 11:00:44.496 INFO  [JavaFX Application Thread] EXPORT - 中文字体已加载（系统）: simsun.ttc
+2026-07-01 11:00:44.582 INFO  [JavaFX Application Thread] EXPORT - PDF 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-105814_报告.pdf
+2026-07-01 11:08:56.889 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849
+2026-07-01 11:08:56.892 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:08:57.302 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:08:58.103 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:08:58.906 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:08:59.702 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:00.503 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:01.306 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:02.107 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:02.903 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:03.704 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:04.506 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:05.303 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:06.105 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:06.903 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:07.705 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:08.502 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:09.303 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:10.106 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:10.906 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:11.706 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:12.504 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:13.305 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:14.106 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:14.906 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:15.703 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:16.503 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:17.307 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:18.103 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:18.903 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:19.705 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:20.505 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:21.304 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:22.108 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:22.903 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:23.702 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:24.502 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:25.305 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:09:26.104 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:01.509 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:01.905 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:07.779 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:08.304 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:09.103 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:09.906 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:10.704 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:11.506 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:12.305 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:13.103 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:13.907 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:14.707 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:15.506 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:16.306 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:17.107 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:17.904 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:18.706 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:19.504 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:20.305 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:21.105 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:21.904 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:22.704 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:23.505 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:24.306 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:25.107 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:25.903 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:26.705 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:27.505 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:28.306 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:29.106 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:29.907 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:30.707 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:31.506 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:32.304 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:33.103 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:33.904 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:34.703 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:35.506 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:36.307 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:10:37.106 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\3\20260701-110849\sensor.csv
+2026-07-01 11:11:34.425 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119
+2026-07-01 11:11:34.426 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:34.588 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:35.385 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:36.188 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:36.986 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:37.787 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:38.584 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:39.387 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:40.187 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:40.987 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:41.789 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:42.588 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:43.387 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:44.187 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:44.989 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:45.788 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:46.588 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:47.388 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:48.188 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:48.985 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:49.787 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:50.587 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:51.386 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:52.186 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:52.987 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:53.787 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:54.585 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:55.386 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:56.185 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:56.986 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:57.787 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:58.585 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:11:59.385 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:00.186 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:00.987 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:01.786 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:02.586 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:03.392 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:04.188 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:04.987 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:05.786 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:06.587 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:07.387 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:08.184 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:08.987 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:31.671 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 45 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:31.684 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 45 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:12:32.144 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-111119_报告.xlsx
+2026-07-01 11:12:35.059 INFO  [JavaFX Application Thread] EXPORT - 中文字体已加载（系统）: simsun.ttc
+2026-07-01 11:12:35.142 INFO  [JavaFX Application Thread] EXPORT - PDF 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-111119_报告.pdf
+2026-07-01 11:18:24.817 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:25.417 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:26.223 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:27.015 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:27.816 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:28.617 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:29.415 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:30.217 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:31.018 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:31.815 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:32.620 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:33.416 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:34.218 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:35.017 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:35.828 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:36.626 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:37.429 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:38.225 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:39.017 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:39.829 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:40.617 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:41.416 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:42.217 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:43.018 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:43.818 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:44.618 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:45.420 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:46.218 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:47.017 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:47.815 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:48.617 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:49.420 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:50.216 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:51.017 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:51.815 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:52.618 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:53.421 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:54.215 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:55.017 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:18:55.816 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:19:21.941 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 85 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:19:21.953 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 85 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:19:21.987 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-111119_报告.xlsx
+2026-07-01 11:19:23.911 INFO  [JavaFX Application Thread] EXPORT - PDF 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-111119_报告.pdf
+2026-07-01 11:25:02.638 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 85 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:25:02.644 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 85 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\1\20260701-111119\sensor.csv
+2026-07-01 11:25:02.677 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-111119_报告.xlsx
+2026-07-01 11:25:04.437 INFO  [JavaFX Application Thread] EXPORT - PDF 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-111119_报告.pdf
+2026-07-01 11:27:42.407 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717
+2026-07-01 11:27:42.411 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:42.413 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:43.206 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:44.007 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:44.805 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:45.606 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:46.410 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:47.205 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:48.012 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:48.808 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:49.612 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:50.408 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:51.207 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:52.005 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:52.820 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:53.611 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:54.416 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:55.211 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:56.008 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:56.814 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:57.608 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:58.420 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:27:59.209 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:00.014 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:00.808 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:01.614 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:02.410 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:03.213 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:04.010 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:04.809 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:05.613 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:06.406 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:07.220 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:08.017 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:08.807 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:09.616 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:10.410 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:11.220 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:12.005 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:12.818 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:13.617 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:14.411 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:15.218 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:16.013 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:16.822 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:17.612 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:18.408 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:19.216 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:20.015 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:20.818 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:21.619 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:22.415 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:23.211 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:24.010 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:24.815 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:25.616 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:26.416 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:27.217 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:28.009 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:28.815 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:29.612 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:30.405 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:31.218 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:45.548 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 63 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:45.564 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 63 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:28:46.134 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-112717_报告.xlsx
+2026-07-01 11:29:00.835 INFO  [JavaFX Application Thread] EXPORT - 中文字体已加载（系统）: simsun.ttc
+2026-07-01 11:29:00.909 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 63 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:29:00.986 INFO  [JavaFX Application Thread] EXPORT - PDF 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-112717_报告.pdf
+2026-07-01 11:29:11.386 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 63 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:29:11.408 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 63 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\4\20260701-112717\sensor.csv
+2026-07-01 11:29:11.524 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-112717_报告.xlsx
+2026-07-01 11:34:26.176 DEBUG [JavaFX Application Thread] FILE - 目录已创建: D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347
+2026-07-01 11:34:26.179 DEBUG [JavaFX Application Thread] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:26.355 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:27.157 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:27.958 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:28.756 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:29.559 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:30.358 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:31.154 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:31.956 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:32.759 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:33.557 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:34.355 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:35.158 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:35.960 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:36.757 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:37.556 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:38.356 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:39.159 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:39.965 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:40.756 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:41.560 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:42.360 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:43.156 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:43.958 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:44.757 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:45.556 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:46.355 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:47.155 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:47.956 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:48.759 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:49.555 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:50.357 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:51.157 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:51.956 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:52.757 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:53.558 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:54.358 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:55.156 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:55.959 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:56.756 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:57.557 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:58.355 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:59.158 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:34:59.957 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:00.758 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:01.555 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:02.360 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:03.157 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:03.958 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:04.756 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:05.556 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:06.355 DEBUG [TestMaster-Scheduler] CSV - CSV 写入成功: 1 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:23.419 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 52 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:23.432 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 52 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:23.950 INFO  [JavaFX Application Thread] EXPORT - Excel 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-113347_报告.xlsx
+2026-07-01 11:35:28.074 INFO  [JavaFX Application Thread] EXPORT - 中文字体已加载（系统）: simsun.ttc
+2026-07-01 11:35:28.152 DEBUG [JavaFX Application Thread] CSV - CSV 读取成功: 52 行 → D:\000001\ISO-11820-\ISO11820_Data\TestData\20240613-001\20260701-113347\sensor.csv
+2026-07-01 11:35:28.212 INFO  [JavaFX Application Thread] EXPORT - PDF 报告已生成: D:\000001\ISO-11820-\ISO11820_Data\Reports\20260701-113347_报告.pdf

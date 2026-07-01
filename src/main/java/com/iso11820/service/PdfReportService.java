@@ -266,8 +266,8 @@ public final class PdfReportService {
                 addConclusion(document, cFont, info);
                 notifyProgress(callback, 4, totalSteps);
 
-                // 5) 温度曲线占位图
-                addChartPlaceholder(document, cFont);
+                // 5) 温度曲线图
+                addChartImage(document, cFont, info);
                 notifyProgress(callback, 5, totalSteps);
 
                 // 6) 签字栏 + 页脚
@@ -457,30 +457,82 @@ public final class PdfReportService {
     }
 
     // ============================================================
-    //  5. 温度曲线占位图
+    //  5. 温度曲线图（使用 XChart 生成真实图表）
     // ============================================================
 
-    private void addChartPlaceholder(Document document, PdfFont cFont) {
-        Paragraph sectionTitle = new Paragraph("四、温度曲线图（占位）")
+    private void addChartImage(Document document, PdfFont cFont, ExportTestInfo info) {
+        Paragraph sectionTitle = new Paragraph("四、温度曲线图")
                 .setFont(cFont).setFontSize(13).setBold()
                 .setFontColor(COLOR_PRIMARY);
         document.add(sectionTitle);
         document.add(new Paragraph("").setHeight(4));
 
-        // 占位矩形框
-        Table placeholder = new Table(1).useAllAvailableWidth();
-        Cell cell = new Cell()
-                .setHeight(250)
-                .setBorder(new SolidBorder(new DeviceRgb(180, 180, 190), 1))
-                .setBackgroundColor(new DeviceRgb(248, 248, 250));
-        Paragraph placeholderText = new Paragraph("温度曲线图\n（请参见 Excel 报告 Sheet3 或使用 XChart 生成）")
-                .setFont(cFont).setFontSize(10)
-                .setFontColor(ColorConstants.GRAY)
-                .setTextAlignment(TextAlignment.CENTER);
-        cell.add(placeholderText);
-        cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
-        placeholder.addCell(cell);
-        document.add(placeholder);
+        // 读取 CSV 数据
+        java.util.List<com.iso11820.service.entity.DataPoint> dataPoints =
+                com.iso11820.service.CsvDataService.getInstance().readAll(info.getProductId(), info.getTestId());
+
+        if (dataPoints.isEmpty()) {
+            Paragraph noData = new Paragraph("（无温度数据）")
+                    .setFont(cFont).setFontSize(10).setFontColor(ColorConstants.GRAY);
+            document.add(noData);
+            document.add(new Paragraph("").setHeight(12));
+            return;
+        }
+
+        // 生成 XChart 图表
+        org.knowm.xchart.XYChart chart = new org.knowm.xchart.XYChartBuilder()
+                .width(500).height(300)
+                .title("温度变化曲线")
+                .xAxisTitle("时间 (秒)").yAxisTitle("温度 (°C)")
+                .build();
+
+        double[] xData = new double[dataPoints.size()];
+        double[] tf1 = new double[dataPoints.size()];
+        double[] tf2 = new double[dataPoints.size()];
+        double[] ts = new double[dataPoints.size()];
+        double[] tc = new double[dataPoints.size()];
+        for (int i = 0; i < dataPoints.size(); i++) {
+            var dp = dataPoints.get(i);
+            xData[i] = dp.getTimeSeconds();
+            tf1[i] = dp.getTf1();
+            tf2[i] = dp.getTf2();
+            ts[i] = dp.getTs();
+            tc[i] = dp.getTc();
+        }
+
+        chart.addSeries("炉温1", xData, tf1).setLineColor(new java.awt.Color(220, 50, 50));
+        chart.addSeries("炉温2", xData, tf2).setLineColor(new java.awt.Color(50, 100, 220));
+        chart.addSeries("表面温", xData, ts).setLineColor(new java.awt.Color(50, 160, 50));
+        chart.addSeries("中心温", xData, tc).setLineColor(new java.awt.Color(200, 150, 0));
+
+        chart.getStyler().setLegendVisible(true);
+        chart.getStyler().setMarkerSize(0);
+        chart.getStyler().setYAxisMin(0.0);
+        chart.getStyler().setYAxisMax(800.0);
+
+        // 导出为 PNG 图片，嵌入 PDF
+        java.nio.file.Path tempPng = null;
+        try {
+            tempPng = java.nio.file.Files.createTempFile("chart-", ".png");
+            org.knowm.xchart.BitmapEncoder.saveBitmap(chart, tempPng.toString(),
+                    org.knowm.xchart.BitmapEncoder.BitmapFormat.PNG);
+
+            com.itextpdf.io.image.ImageData imageData =
+                    com.itextpdf.io.image.ImageDataFactory.create(tempPng.toFile().getAbsolutePath());
+            com.itextpdf.layout.element.Image chartImage = new com.itextpdf.layout.element.Image(imageData);
+            chartImage.setAutoScale(true);
+            chartImage.setHorizontalAlignment(com.itextpdf.layout.properties.HorizontalAlignment.CENTER);
+            document.add(chartImage);
+        } catch (Exception e) {
+            Paragraph fallback = new Paragraph("（图表生成失败: " + e.getMessage() + "）")
+                    .setFont(cFont).setFontSize(10).setFontColor(ColorConstants.GRAY);
+            document.add(fallback);
+        } finally {
+            if (tempPng != null) {
+                try { java.nio.file.Files.deleteIfExists(tempPng); } catch (Exception ignored) { }
+            }
+        }
+
         document.add(new Paragraph("").setHeight(12));
     }
 

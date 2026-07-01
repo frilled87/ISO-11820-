@@ -298,7 +298,11 @@ public class MainController {
 
     @FXML
     private void handleStopRecording() {
-        if (testMaster != null && !testMaster.stopRecording()) {
+        if (testMaster != null && testMaster.stopRecording()) {
+            appendLog("试验记录完成，请填写试验后质量", "info");
+            // 自动弹出试验记录保存对话框
+            handleTestRecord();
+        } else {
             appendLog("记录时长不足30秒，试验无效", "warn");
         }
     }
@@ -326,8 +330,16 @@ public class MainController {
 
     @FXML
     private void handleTestRecord() {
-        if (testMaster == null || currentDbEntity == null) {
-            appendLog("没有可保存的试验记录", "warn");
+        if (testMaster == null) {
+            appendLog("系统未初始化", "error");
+            return;
+        }
+        // 如果 currentDbEntity 为空，尝试从数据库重新加载
+        if (currentDbEntity == null && currentProductId != null && currentTestId != null) {
+            currentDbEntity = testDao.getByKey(currentProductId, currentTestId);
+        }
+        if (currentDbEntity == null) {
+            appendLog("没有可保存的试验记录，请先新建试验", "warn");
             return;
         }
         try {
