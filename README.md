@@ -1,414 +1,225 @@
-# ISO 11820 — 工具层交付文档
+# ISO 11820 建筑材料不燃性试验仿真系统
 
-> **项目**: ISO 11820 建筑材料不燃性试验仿真系统  
-> **模块**: 工具层（utils + service）  
-> **开发人员**: 工具服务开发（5人小组中的工具层负责）  
-> **技术栈**: Java 17 + Maven  
-> **日期**: 2026-06-30  
+> **ISO 11820:2022** — 建筑材料不燃性试验的计算机仿真实现  
+> 无需真实硬件，用软件模拟整个试验流程，生成标准格式报告  
 
 ---
 
-## 一、架构总览
+## 一、项目简介
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        UI 层（其他组员）                          │
-│                    JavaFX + FXML + Controller                    │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │ 调用
-┌──────────────────────────▼──────────────────────────────────────┐
-│                     Service 服务层（本模块）                       │
-│  ┌─────────────────┐  ┌──────────────────┐  ┌────────────────┐  │
-│  │ReportExportService│  │ ExcelReportService│  │PdfReportService│  │
-│  │   ⭐ 统一门面     │  │  POI 5.x 导出    │  │ iText7 导出    │  │
-│  └────────┬────────┘  └────────┬─────────┘  └───────┬────────┘  │
-│           │                    │                      │          │
-│  ┌────────▼────────────────────▼──────────────────────▼────────┐ │
-│  │                    CsvDataService                            │ │
-│  │              CSV 温度时序数据读写服务                          │ │
-│  └────────────────────────┬────────────────────────────────────┘ │
-│                           │                                      │
-│  ┌────────────────────────▼────────────────────────────────────┐ │
-│  │              entity/DataPoint  +  model/ExportTestInfo       │ │
-│  │                    数据实体（纯 POJO）                        │ │
-│  └─────────────────────────────────────────────────────────────┘ │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │ 依赖
-┌──────────────────────────▼──────────────────────────────────────┐
-│                     Utils 工具层（本模块）                         │
-│  ┌──────────┐ ┌──────────┐ ┌───────────┐ ┌──────────┐          │
-│  │AppConfig │ │ LogUtil  │ │ DateUtil  │ │ NumUtil  │          │
-│  │配置管理   │ │日志门面  │ │日期时间   │ │数值工具  │          │
-│  └──────────┘ └──────────┘ └───────────┘ └──────────┘          │
-│  ┌──────────┐ ┌────────────────────┐                            │
-│  │JsonUtil  │ │FilePathManageUtil  │                            │
-│  │JSON工具  │ │路径统一管理        │                            │
-│  └──────────┘ └────────────────────┘                            │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │ 读取
-┌──────────────────────────▼──────────────────────────────────────┐
-│                  appsettings.json  +  logback.xml                │
-│                    配置文件          日志配置                     │
-└─────────────────────────────────────────────────────────────────┘
-```
+在建材防火实验室中，需要把建筑材料样品放入加热炉，加热到 **750°C**，记录 **60 分钟**的温度数据，判断材料是否"不燃"。
 
-**依赖原则**: 上层可依赖下层，下层绝不感知上层。Service 依赖 Utils，Utils 只依赖配置文件。
+本项目用 **JavaFX 桌面应用** 仿真出整个试验流程——温度数据由仿真引擎自动生成，用户按照真实操作流程走一遍，最终生成 CSV / Excel / PDF 三种标准格式报告。
 
 ---
 
-## 二、四轮开发文件清单
+## 二、技术栈
 
-### 第 1 轮：配置与日志
-
-| 文件 | 包路径 | 行数 | 说明 |
-|------|--------|------|------|
-| `AppConfig.java` | `com.iso11820.utils` | ~200 | 配置管理单例，线程安全 DCL |
-| `LogUtil.java` | `com.iso11820.utils` | ~180 | 日志门面，封装 SLF4J/Logback |
-| `DateUtil.java` | `com.iso11820.utils` | ~280 | 日期格式化、时间戳、时差计算 |
-| `NumUtil.java` | `com.iso11820.utils` | ~260 | 精度控制、空值转换、数字校验 |
-| `JsonUtil.java` | `com.iso11820.utils` | ~280 | JSON 序列化/反序列化、文件读写 |
-| `appsettings.json` | `resources` | ~55 | 完整配置文件 |
-| `logback.xml` | `resources` | ~110 | 日志配置（控制台彩色+滚动文件） |
-
-### 第 2 轮：CSV 与文件管理
-
-| 文件 | 包路径 | 行数 | 说明 |
-|------|--------|------|------|
-| `FilePathManageUtil.java` | `com.iso11820.utils` | ~480 | 路径管理、目录创建、批量清理 |
-| `DataPoint.java` | `com.iso11820.service.entity` | ~180 | 时序温度数据点实体 |
-| `CsvDataService.java` | `com.iso11820.service` | ~300 | CSV 读写服务（追加/批量/读取/删除） |
-
-### 第 3 轮：Excel/PDF 导出
-
-| 文件 | 包路径 | 行数 | 说明 |
-|------|--------|------|------|
-| `ExportTestInfo.java` | `com.iso11820.service.model` | ~280 | 试验报告数据实体 |
-| `ExcelReportService.java` | `com.iso11820.service` | ~370 | Excel 3 Sheet 报告导出 |
-| `PdfReportService.java` | `com.iso11820.service` | ~420 | PDF A4 中文报告导出 |
-
-### 第 4 轮：整合与文档
-
-| 文件 | 包路径 | 行数 | 说明 |
-|------|--------|------|------|
-| `ReportExportService.java` | `com.iso11820.service` | ~200 | ⭐ 统一导出门面 |
-| `Round4FullIntegrationExample.java` | `com.iso11820.service` | ~250 | 全链路集成演示 |
-| `README.md` | 项目根目录 | — | 本文档 |
-
-### 示例文件
-
-| 文件 | 说明 |
+| 类别 | 技术 |
 |------|------|
-| `Round1UsageExample.java` | 配置/日志/日期/数值/JSON 调用示例 |
-| `Round2UsageExample.java` | CSV 读写 + 文件路径管理示例 |
-| `Round3UsageExample.java` | Excel/PDF 导出示例 |
-| `Round4FullIntegrationExample.java` | 全流程集成测试（可直接运行） |
+| 语言 | Java 17 |
+| 构建 | Maven 3.9+ |
+| UI | JavaFX 21 + FXML |
+| 数据库 | SQLite（sqlite-jdbc 3.45） |
+| 图表 | XChart 3.8 |
+| Excel | Apache POI 5.2 |
+| PDF | iText7 7.2 |
+| JSON | Jackson 2.16 |
+| 日志 | SLF4J + Logback |
+| 测试 | JUnit 5 + JaCoCo |
 
 ---
 
-## 三、类依赖关系图
+## 三、团队成员
+
+| 角色 | 姓名 | 负责模块 | 说明 |
+|:----:|------|----------|------|
+| 1 | **颜瑞** | 业务核心层 | 仿真引擎（SensorSimulator）、状态机（TestStateMachine）、试验主控制器（TestMaster） |
+| 2 | **陈培钦** | 数据持久层 | DAO 接口与实现、SQLite 数据库设计、schema.sql 建表脚本、DbUtil 连接管理 |
+| 3 | **杨晋宇** | UI 层 | JavaFX FXML 界面设计、Controller 控制器、用户交互逻辑 |
+| 4 | **王润廷** | 工具层 + 服务层 | AppConfig 配置管理、日志工具、DateUtil/NumUtil/JsonUtil、FilePathManageUtil；CsvDataService、ExcelReportService、PdfReportService 导出服务 |
+| 5 | **柯康锐** | 测试 + 文档 | 单元测试编写、集成测试验证、JaCoCo 覆盖率、开发文档维护、README 编写 |
+
+---
+
+## 四、架构分层
 
 ```
-ReportExportService（门面）
-  ├── ExcelReportService ────┬── AppConfig
-  │                          ├── FilePathManageUtil
-  │                          ├── CsvDataService ── DataPoint
-  │                          └── NumUtil, DateUtil
-  ├── PdfReportService ──────┬── AppConfig
-  │                          ├── FilePathManageUtil
-  │                          └── NumUtil, DateUtil
-  └── ExportTestInfo ──────── NumUtil
+┌──────────────────────────────────────────────────┐
+│                  UI 层（杨晋宇）                    │
+│  LoginView / MainView / NewTestDialog /           │
+│  TestRecordDialog / SettingsDialog                │
+│  FXML + Controller                                │
+└────────────────────┬─────────────────────────────┘
+                     │ 调用
+┌────────────────────▼─────────────────────────────┐
+│              业务核心层（颜瑞）                      │
+│  TestMaster / TestStateMachine / SensorSimulator  │
+│  TestState / SensorData / SystemMessage           │
+└────────────────────┬─────────────────────────────┘
+                     │ 调用
+┌────────────────────▼─────────────────────────────┐
+│              服务层（王润廷）                        │
+│  CsvDataService / ExcelReportService /            │
+│  PdfReportService / ReportExportService           │
+└────────┬──────────────────────┬──────────────────┘
+         │                      │
+┌────────▼──────────┐  ┌───────▼───────────────────┐
+│ 数据层（陈培钦）    │  │ 工具层（王润廷）             │
+│ BaseDao / DAO接口  │  │ AppConfig / LogUtil /     │
+│ DAO实现 / DbUtil   │  │ DateUtil / NumUtil /      │
+│ Entity / schema.sql│  │ JsonUtil / FilePathUtil   │
+└────────┬──────────┘  └───────────────────────────┘
+         │
+┌────────▼──────────┐
+│  SQLite 数据库     │
+│  ISO11820.db      │
+└───────────────────┘
 
-CsvDataService ──┬── FilePathManageUtil ── AppConfig
-                 ├── NumUtil, DateUtil
-                 └── DataPoint ── NumUtil, DateUtil
+测试 + 文档（柯康锐）：JUnit 5 单元测试、JaCoCo 覆盖率、开发文档维护
+```
 
-FilePathManageUtil ── AppConfig, LogUtil
+**设计原则**：上层依赖下层，下层不感知上层；数据通过事件（DataChangeListener）向上传递；所有 UI 更新通过 `Platform.runLater()` 切换线程。
 
-AppConfig, LogUtil, DateUtil, NumUtil, JsonUtil
-  └── 无内部依赖（仅依赖 Jackson + SLF4J）
+---
+
+## 五、功能演示
+
+### 完整试验流程
+
+```
+1. 启动程序 → 登录界面（管理员 admin / 123456）
+2. 新建试验 → 填写样品信息 → 保存
+3. 开始升温 → 炉温从 25°C 升至 750°C（仿真）
+4. 温度稳定 → 自动变为"就绪"状态
+5. 开始记录 → 计时器启动，每秒记录温度
+6. 停止记录 → 填写试验后质量 → 保存试验记录
+7. 记录查询 → 查看历史试验数据
+8. 导出报告 → Excel / PDF 文件生成
+```
+
+### 核心功能清单
+
+| 功能 | 说明 |
+|------|------|
+| 角色登录 | 管理员 / 试验员，密码验证 |
+| 新建试验 | 样品信息、环境参数、时长模式 |
+| 温度仿真 | 5 通道温度（炉温1/2、表面温、中心温、校准温），4 阶段算法 |
+| 状态机 | Idle → Preparing → Ready → Recording → Complete |
+| 实时显示 | 温度数值、曲线图、计时器、温漂、状态标签 |
+| 系统消息 | 时间戳 + 消息内容，颜色区分事件类型 |
+| 按钮状态 | 严格跟随状态机启用/禁用 |
+| 试验记录 | 火焰现象、试验后质量、自动计算失重率和温升 |
+| 数据导出 | CSV（自动）、Excel 3 Sheet（手动）、PDF 报告（手动） |
+| 记录查询 | 日期范围、样品编号、操作员筛选，双击查看详情 |
+| 设备校准 | 校准温显示、新建校准记录、历史列表 |
+| 参数设置 | 目标炉温、升温速率、温度波动、标准时长，持久化保存 |
+
+---
+
+## 六、快速开始
+
+### 环境要求
+
+- **JDK 17**（必须）
+- Maven 3.9+（或使用 IntelliJ IDEA 直接打开）
+- Windows 10/11
+
+### 启动程序
+
+```bash
+# 克隆仓库
+git clone https://github.com/frilled87/ISO-11820-.git
+cd ISO-11820-
+
+# 编译并运行
+mvn javafx:run -Djacoco.skip=true
+```
+
+### 运行测试
+
+```bash
+mvn test -Djacoco.skip=true
+```
+
+### IntelliJ IDEA 打开
+
+1. File → Open → 选择项目根目录
+2. IDEA 自动识别 Maven 项目，下载依赖
+3. 右键 `ISO11820Application.java` → Run
+
+---
+
+## 七、项目结构
+
+```
+ISO-11820-
+├── sql/
+│   └── schema.sql                         # 数据库建表 + 初始数据
+├── src/main/java/com/iso11820/
+│   ├── ISO11820Application.java           # 程序入口
+│   ├── core/                              # 业务核心层
+│   │   ├── TestMaster.java                # 试验主控制器
+│   │   ├── TestStateMachine.java          # 状态机
+│   │   ├── TestState.java                 # 状态枚举
+│   │   ├── TestContext.java               # 试验上下文
+│   │   ├── SensorData.java                # 5通道温度数据
+│   │   ├── SystemMessage.java             # 系统消息
+│   │   ├── DataChangeListener.java        # 数据变更监听接口
+│   │   └── simulation/
+│   │       └── SensorSimulator.java       # 温度仿真引擎
+│   ├── dao/                               # 数据持久层
+│   │   ├── BaseDao.java                   # 通用CRUD基类
+│   │   ├── util/DbUtil.java               # 数据库连接工具
+│   │   ├── impl/                          # DAO实现
+│   │   └── dto/                           # 数据传输对象
+│   ├── entity/                            # 数据库实体
+│   ├── service/                           # 服务层
+│   │   ├── CsvDataService.java            # CSV温度数据读写
+│   │   ├── ExcelReportService.java        # Excel报告导出
+│   │   ├── PdfReportService.java          # PDF报告导出
+│   │   └── ReportExportService.java       # 统一导出门面
+│   ├── ui/                                # UI层
+│   │   ├── LoginController.java           # 登录控制器
+│   │   ├── MainController.java            # 主界面控制器
+│   │   └── dialog/                        # 子窗口控制器
+│   └── utils/                             # 工具层
+│       ├── AppConfig.java                 # 配置管理
+│       ├── LogUtil.java                   # 日志工具
+│       ├── DateUtil.java                  # 日期时间
+│       ├── NumUtil.java                   # 数值精度
+│       ├── JsonUtil.java                  # JSON工具
+│       └── FilePathManageUtil.java        # 文件路径管理
+├── src/main/resources/
+│   ├── fxml/                              # FXML界面文件
+│   ├── appsettings.json                   # 配置文件
+│   └── logback.xml                        # 日志配置
+├── src/test/java/                         # 单元测试
+├── docs/                                  # 文档
+│   ├── ISO11820-开发文档.md
+│   ├── DB-数据库设计.md
+│   └── core-api.md
+└── pom.xml                                # Maven配置
 ```
 
 ---
 
-## 四、Maven 完整依赖汇总
-
-以下依赖可直接复制到 `pom.xml` 的 `<dependencies>` 块中：
-
-```xml
-<!-- ============================================================ -->
-<!--  日志框架                                                      -->
-<!-- ============================================================ -->
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>2.0.9</version>
-</dependency>
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.4.14</version>
-</dependency>
-
-<!-- ============================================================ -->
-<!--  JSON 序列化                                                   -->
-<!-- ============================================================ -->
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.16.1</version>
-</dependency>
-<dependency>
-    <groupId>com.fasterxml.jackson.datatype</groupId>
-    <artifactId>jackson-datatype-jsr310</artifactId>
-    <version>2.16.1</version>
-</dependency>
-
-<!-- ============================================================ -->
-<!--  Excel 导出（Apache POI 5.x）                                    -->
-<!-- ============================================================ -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>5.2.5</version>
-</dependency>
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi-ooxml</artifactId>
-    <version>5.2.5</version>
-</dependency>
-
-<!-- ============================================================ -->
-<!--  PDF 导出（iText7）                                             -->
-<!-- ============================================================ -->
-<dependency>
-    <groupId>com.itextpdf</groupId>
-    <artifactId>itext7-core</artifactId>
-    <version>7.2.5</version>
-    <type>pom</type>
-</dependency>
-<dependency>
-    <groupId>com.itextpdf</groupId>
-    <artifactId>pdfCalligraph</artifactId>
-    <version>7.2.5</version>
-</dependency>
-```
-
-> **Maven 属性**（放在 `<properties>` 中）：
-> ```xml
-> <maven.compiler.source>17</maven.compiler.source>
-> <maven.compiler.target>17</maven.compiler.target>
-> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-> ```
-
----
-
-## 五、运行前置条件
-
-### 5.1 开发环境
-
-| 要求 | 版本/说明 |
-|------|----------|
-| JDK | **17** 或更高（LTS 推荐） |
-| Maven | 3.8+ |
-| IDE | IntelliJ IDEA 2023+（推荐）或 VS Code |
-| 操作系统 | Windows 10/11 或 Linux（Ubuntu 20.04+） |
-
-### 5.2 编码设置
-
-- 所有 `.java` 文件使用 **UTF-8** 编码
-- `appsettings.json`、`logback.xml` 使用 **UTF-8** 编码
-- CSV 文件默认 **UTF-8** 编码（可在配置中修改）
-- IDEA 设置：`File → Settings → Editor → File Encodings → UTF-8`
-
-### 5.3 文件夹权限
-
-| 目录 | 权限要求 | 说明 |
-|------|---------|------|
-| `./ISO11820_Data/` | 读写 | 数据根目录，程序自动创建 |
-| `./logs/` | 读写 | 日志目录，程序自动创建 |
-| `./Data/` | 读写 | 数据库目录（SQLite） |
-| 字体文件（Windows） | 读 | PDF 需读取 `C:/Windows/Fonts/simsun.ttc` |
-
-> Linux 下 PDF 中文渲染需手动安装中文字体：`sudo apt install fonts-noto-cjk`
-
-### 5.4 配置文件位置
-
-- `src/main/resources/appsettings.json` — classpath 配置（开发环境）
-- 可通过 `AppConfig.setExternalConfigPath("/path/to/config.json")` 指定外部配置
-
----
-
-## 六、高频报错排查手册
-
-### 6.1 中文乱码
-
-| 现象 | 原因 | 解决 |
-|------|------|------|
-| 控制台乱码 | IDEA 编码设置不正确 | `Help → Edit Custom VM Options` 添加 `-Dfile.encoding=UTF-8` |
-| CSV 中文乱码 | Excel 打开方式问题 | 用记事本另存为 UTF-8 BOM 格式，或使用 WPS 打开 |
-| PDF 中文显示为方块 | 缺少中文字体 | 方案1：`pdf.setCustomFontPath("D:/fonts/msyh.ttf")` 指定字体；方案2：放入 `src/main/resources/fonts/NotoSansSC-Regular.otf` |
-| 日志文件乱码 | logback.xml 未配置编码 | 确认 `logback.xml` 中 `<charset>UTF-8</charset>` |
-
-### 6.2 文件找不到
-
-| 现象 | 原因 | 解决 |
-|------|------|------|
-| `appsettings.json` 找不到 | 不在 classpath 中 | 确认文件在 `src/main/resources/` 下，或调用 `setExternalConfigPath()` |
-| CSV 文件不存在 | 未写入数据或路径错误 | 确保先调用 `CsvDataService.appendRow()` 写入数据 |
-| SQLite 数据库不存在 | 首次运行未初始化 | 确保 `sql/schema.sql` 在 classpath 中 |
-| 字体文件找不到 | Windows/Linux 路径差异 | Windows: `C:/Windows/Fonts/simsun.ttc`；Linux: 需手动安装 |
-
-### 6.3 CSV 解析失败
-
-| 现象 | 原因 | 解决 |
-|------|------|------|
-| 解析返回空列表 | 文件不存在或为空 | 调用 `FilePathManageUtil.csvExists()` 检查 |
-| 部分行跳过 | 格式损坏 | 查看日志中 WARN 级别信息，定位损坏行号 |
-| 数值全为 0 | 分隔符不匹配 | 确认 `appsettings.json` 中 `CsvDelimiter` 为 `,` |
-| 读取到乱码 | 编码不一致 | 确认 `CsvEncoding` 配置为 `UTF-8` |
-
-### 6.4 PDF 字体缺失
-
-| 现象 | 原因 | 解决 |
-|------|------|------|
-| 中文全部方块 | 系统无中文字体 | 下载 NotoSansSC-Regular.otf 放入 `resources/fonts/` |
-| 部分字符缺失 | 字体不完整 | 使用完整字体文件（如微软雅黑 20MB+） |
-| 字体加载失败 | 路径错误 | 使用绝对路径：`pdf.setCustomFontPath("D:/fonts/msyh.ttf")` |
-| Linux 下无字体 | 未安装中文字体包 | `sudo apt install fonts-noto-cjk fonts-wqy-microhei` |
-
-### 6.5 导出权限不足
-
-| 现象 | 原因 | 解决 |
-|------|------|------|
-| Excel 写入失败 | 文件被占用 | 关闭已打开的 Excel 文件后重试 |
-| 目录创建失败 | 无写入权限 | 检查当前目录是否可写，或修改 `appsettings.json` 中的路径 |
-| PDF 写入失败 | 路径不存在 | 确认 `FileStorage.BaseDirectory` 路径合法 |
-| 批量导出中断 | 磁盘空间不足 | 检查磁盘剩余空间 |
-
-### 6.6 其他常见问题
-
-| 现象 | 原因 | 解决 |
-|------|------|------|
-| Maven 编译报错 | 依赖版本冲突 | 运行 `mvn dependency:tree` 检查冲突 |
-| `getInstance()` 返回 null | 类加载顺序问题 | 确认 DCL 单例类未被序列化破坏 |
-| 温度精度异常 | 未使用 NumUtil | 所有温度值使用 `NumUtil.roundTemp()` 统一精度 |
-| 日志文件不滚动 | logback.xml 配置错误 | 确认 `maxFileSize` 和 `maxHistory` 配置正确 |
-
----
-
-## 七、Git 提交规范
-
-### 7.1 提交信息格式
+## 八、Git 提交规范
 
 ```
 [模块] 简短描述
 
-详细说明（可选）
-
-- 模块: utils | service | config
-- 类型: feat | fix | refactor | docs | test
+模块: ui | core | dao | utils | service | config | docs
+类型: feat | fix | refactor | test
 ```
 
-### 7.2 示例
-
+示例：
 ```
-[utils] 新增 DateUtil、NumUtil、JsonUtil 工具类
-
-[service] 实现 ExcelReportService 和 PdfReportService
-
-[config] 更新 appsettings.json 和 logback.xml
-
-[fix] 修复 CsvDataService 批量写入并发问题
-
-[docs] 补充 README 文档和调用示例
-```
-
-### 7.3 模块修改红线 ⚠️
-
-| 禁止操作 | 说明 |
-|---------|------|
-| ❌ 修改 `com.iso11820.core.*` | 核心引擎层（其他组员负责） |
-| ❌ 修改 `com.iso11820.dao.*` | 数据持久层（其他组员负责） |
-| ❌ 修改 `com.iso11820.ui.*` | UI 界面层（其他组员负责） |
-| ❌ 修改 `com.iso11820.entity.*` | 数据库实体（其他组员负责） |
-| ✅ 修改 `com.iso11820.utils.*` | 本模块 — 工具层 |
-| ✅ 修改 `com.iso11820.service.*` | 本模块 — 服务层 |
-| ✅ 修改 `pom.xml` | 仅添加依赖，不修改 compile 配置 |
-| ✅ 修改 `appsettings.json` | 仅新增配置项，不删除已有项 |
-| ✅ 修改 `logback.xml` | 仅新增 logger，不修改根配置 |
-
----
-
-## 八、快速开始
-
-### 8.1 最简调用（3 行代码）
-
-```java
-// 1. 构造数据
-ExportTestInfo info = new ExportTestInfo();
-info.setTestId("20260630-143000");
-// ... 填充其他字段 ...
-
-// 2. 一键导出（自动判断生成 Excel+PDF）
-boolean ok = ReportExportService.getInstance().exportReport(info);
-```
-
-### 8.2 完整流程（可直接运行）
-
-```bash
-# 运行全流程集成测试
-mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round4FullIntegrationExample"
-```
-
-### 8.3 各轮示例入口
-
-```bash
-# 第 1 轮: 配置 + 日志 + 日期 + 数值 + JSON
-mvn compile exec:java -Dexec.mainClass="com.iso11820.utils.Round1UsageExample"
-
-# 第 2 轮: CSV 读写 + 文件路径管理
-mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round2UsageExample"
-
-# 第 3 轮: Excel + PDF 导出
-mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round3UsageExample"
-
-# 第 4 轮: 全流程集成
-mvn compile exec:java -Dexec.mainClass="com.iso11820.service.Round4FullIntegrationExample"
+[ui] 实现参数设置窗口和按钮事件绑定
+[core] 修复状态机线程安全问题
+[dao] 修复updateResult空值约束异常
 ```
 
 ---
 
-## 附录：文件清单完整索引
-
-```
-src/main/java/com/project/
-├── utils/
-│   ├── AppConfig.java                  # 配置管理单例
-│   ├── LogUtil.java                    # 日志工具门面
-│   ├── DateUtil.java                   # 日期时间工具
-│   ├── NumUtil.java                    # 数值工具
-│   ├── JsonUtil.java                   # JSON 工具
-│   ├── FilePathManageUtil.java         # 文件路径统一管理
-│   ├── Round1UsageExample.java         # 第1轮示例
-│   └── package-info.java
-├── service/
-│   ├── ReportExportService.java        # ⭐ 统一导出门面
-│   ├── CsvDataService.java             # CSV 读写服务
-│   ├── ExcelReportService.java         # Excel 导出服务
-│   ├── PdfReportService.java           # PDF 导出服务
-│   ├── Round2UsageExample.java         # 第2轮示例
-│   ├── Round3UsageExample.java         # 第3轮示例
-│   ├── Round4FullIntegrationExample.java # 第4轮全流程
-│   ├── package-info.java
-│   ├── entity/
-│   │   └── DataPoint.java              # 时序温度实体
-│   └── model/
-│       └── ExportTestInfo.java         # 导出数据实体
-src/main/resources/
-├── appsettings.json                    # 配置文件
-└── logback.xml                         # 日志配置
-```
-
----
-
-> **文档版本**: 1.0 | **最后更新**: 2026-06-30 | **维护者**: 工具服务开发组
+> **版本**: 1.0 | **日期**: 2026-07 | **课程**: 软件工程实践
